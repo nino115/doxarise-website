@@ -215,6 +215,20 @@
   .lesson-stats .n{font-weight:800;font-size:22px;color:var(--bone);}
   .lesson-stats .l{font-size:12px;color:var(--mist);}
 
+  /* FOUNDER */
+  .founder-grid{display:grid;grid-template-columns:0.85fr 1.15fr;gap:56px;align-items:center;}
+  .founder-photo{
+    border:1px solid var(--line);border-radius:16px;overflow:hidden;
+    background:var(--obsidian-2);aspect-ratio:1/1;
+  }
+  .founder-photo img{width:100%;height:100%;object-fit:cover;display:block;}
+  .founder-text h2{font-size:30px;margin:14px 0 20px;}
+  .founder-text p{color:var(--mist);font-size:15px;margin-bottom:16px;}
+  .founder-tag{
+    display:block;font-family:'Manrope';font-weight:600;font-size:13px;
+    color:var(--gold);border-top:1px solid var(--line);padding-top:18px;margin-top:8px;
+  }
+
   /* FAQ */
   .faq-item{border-bottom:1px solid var(--line);padding:22px 0;cursor:pointer;}
   .faq-q{display:flex;justify-content:space-between;align-items:center;font-weight:600;font-size:16px;}
@@ -260,7 +274,8 @@
   .footer-copy{font-size:12px;color:var(--mist);}
 
   @media(max-width:860px){
-    .hero-grid, .three-col, .service-grid, .proof-detail, .cta-inner{grid-template-columns:1fr;}
+    .hero-grid, .three-col, .service-grid, .proof-detail, .cta-inner, .founder-grid{grid-template-columns:1fr;}
+    .founder-photo{aspect-ratio:16/10;}
     .stagger-card{width:100%;align-self:center !important;margin-top:0 !important;}
     .navlinks{display:none;}
     .hero h1{font-size:36px;}
@@ -489,6 +504,24 @@
         <span class="eyebrow">Why We Don't Chase Viral Spikes</span>
         <h3>We optimize for the metric that pays your bills, not the one that just looks good.</h3>
         <p>One client post crossed 1 million views. It's a real number, but it drove only 97 new followers, and it landed after real inquiries had already been climbing for weeks, not before. We track what a big spike doesn't show you, whether people actually reach out. Consistent, targeted content did that. A single viral moment didn't.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="founder">
+  <div class="wrap">
+    <div class="founder-grid">
+      <div class="founder-photo">
+        <img src="assets/nino-peralta.jpg" alt="Niño Peralta, Founder of Doxarise">
+      </div>
+      <div class="founder-text">
+        <span class="eyebrow">The Founder</span>
+        <h2>The person who builds it is the person who runs it.</h2>
+        <p>I'm Niño Peralta, founder of Doxarise.</p>
+        <p>I started as a hands-on digital marketing operator, not an agency executive. Before Doxarise, I grew a dormant TikTok account from 196 views to 270,000 in under 30 days, and ran a zero-ad-spend Facebook campaign that generated 62 organic sales. I've managed Google Business Profiles, built GoHighLevel automation systems, and run outreach and lead generation for clients directly, not through a layer of account managers.</p>
+        <p>That's still how Doxarise works. When you work with us, you're not handed off to a junior team executing a templated playbook. I build the strategy and I execute it. No middleman between the plan and the work getting done.</p>
+        <span class="founder-tag">Right now I'm working with a small number of clients by design, not because I have to. That's what keeps the execution sharp.</span>
       </div>
     </div>
   </div>
