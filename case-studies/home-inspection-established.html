@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Case Study: Established Home Inspection Company | Doxarise</title>
+<meta name="description" content="How an established home inspection company went from 51K to 11.4M views in 4 months with short-form video.">
+<meta name="theme-color" content="#0B0B0C">
+<link rel="icon" href="../assets/logo.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --obsidian:#0B0B0C; --obsidian-2:#141416; --card:#171615;
+    --card-border:rgba(201,164,106,0.16); --gold:#C9A46A; --gold-bright:#E4C48C;
+    --bone:#F6F3EE; --mist:#A0A5AE; --line:rgba(201,164,106,0.18);
+    --radius-lg:28px; --radius-md:18px; --radius-pill:999px;
+    --ease:cubic-bezier(.22,.61,.36,1); --nav-h:76px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--obsidian);color:var(--bone);font-family:'Inter',sans-serif;line-height:1.6;overflow-x:hidden;}
+  h1,h2,h3{font-family:'Manrope',sans-serif;font-weight:800;letter-spacing:-0.02em;line-height:1.12;}
+  h1{font-size:clamp(2rem,4.4vw,3.2rem);}
+  h2{font-size:clamp(1.5rem,2.6vw,2rem);}
+  p{color:var(--mist);}
+  a{color:inherit;text-decoration:none;}
+  ul{list-style:none;}
+  :focus-visible{outline:2px solid var(--gold-bright);outline-offset:3px;}
+  .wrap{max-width:880px;margin:0 auto;padding:0 32px;}
+  .eyebrow{font-family:'Manrope',sans-serif;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;font-size:12px;color:var(--gold);display:inline-block;margin-bottom:14px;}
+
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:15px 28px;border-radius:var(--radius-pill);font-weight:700;font-size:15px;transition:transform .25s var(--ease), box-shadow .25s var(--ease), background .25s var(--ease);white-space:nowrap;}
+  .btn-gold{background:linear-gradient(135deg,var(--gold-bright),var(--gold));color:#20170a;box-shadow:0 8px 24px -8px rgba(201,164,106,0.55);}
+  .btn-gold:hover{transform:translateY(-2px);}
+  .btn-sm{padding:10px 20px;font-size:13px;}
+
+  nav{position:sticky;top:0;z-index:100;background:rgba(11,11,12,0.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line);}
+  nav .wrap{max-width:1160px;display:flex;align-items:center;justify-content:space-between;height:var(--nav-h);gap:16px;}
+  .brand{display:flex;align-items:center;gap:10px;}
+  .brand img{height:30px;width:30px;}
+  .brand span{font-family:'Manrope',sans-serif;font-weight:800;letter-spacing:0.08em;font-size:17px;}
+  .back{font-size:14px;font-weight:600;color:var(--mist);transition:color .2s;}
+  .back:hover{color:var(--bone);}
+
+  .hero{padding:80px 0 56px;border-bottom:1px solid var(--line);}
+  .hero h1{margin-bottom:18px;}
+  .hero .sub{font-size:1.08rem;max-width:640px;}
+  .meta{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px;}
+  .chip{padding:8px 16px;border:1px solid var(--line);border-radius:var(--radius-pill);font-size:13px;color:var(--bone);}
+
+  section{padding:64px 0;border-bottom:1px solid var(--line);}
+  section h2{margin-bottom:16px;}
+  section > .wrap > p{font-size:1.02rem;max-width:680px;margin-bottom:14px;}
+
+  .steps{display:grid;gap:14px;margin-top:24px;}
+  .step{display:flex;gap:18px;background:var(--card);border:1px solid var(--card-border);border-radius:var(--radius-md);padding:22px 24px;}
+  .step-num{flex:none;width:40px;height:40px;border-radius:50%;border:1px solid var(--gold);display:flex;align-items:center;justify-content:center;font-family:'Manrope',sans-serif;font-weight:800;color:var(--gold-bright);font-size:14px;}
+  .step h3{font-size:1.05rem;color:var(--bone);margin-bottom:4px;}
+  .step p{font-size:14.5px;}
+
+  .period{font-size:13px;color:var(--mist);margin-bottom:24px;}
+  .period strong{color:var(--bone);font-weight:600;}
+  .group-label{font-family:'Manrope',sans-serif;font-weight:700;font-size:13px;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);margin:34px 0 14px;}
+  .stats{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;}
+  .stat{background:var(--card);border:1px solid var(--card-border);border-radius:var(--radius-md);padding:24px;}
+  .stat .label{font-size:13.5px;color:var(--mist);margin-bottom:10px;}
+  .stat .row{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;}
+  .stat .before{font-family:'Manrope',sans-serif;font-weight:700;font-size:1.15rem;color:var(--mist);}
+  .stat .arrow{color:var(--gold);font-weight:700;}
+  .stat .after{font-family:'Manrope',sans-serif;font-weight:800;font-size:1.9rem;color:var(--gold-bright);line-height:1;}
+  .stat .note{font-size:13px;margin-top:10px;}
+  .stat.wide{grid-column:1 / -1;}
+  .total{margin-top:16px;background:linear-gradient(135deg, rgba(201,164,106,0.12), rgba(201,164,106,0.03));border:1px solid var(--gold);border-radius:var(--radius-md);padding:26px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;}
+  .total .label{color:var(--bone);font-weight:600;}
+  .total .after{font-family:'Manrope',sans-serif;font-weight:800;font-size:2.2rem;color:var(--gold-bright);line-height:1;}
+
+  .cta{padding:72px 0 88px;text-align:center;border-bottom:none;}
+  .cta h2{margin-bottom:12px;}
+  .cta p{max-width:520px;margin:0 auto 28px;}
+
+  footer{padding:36px 0;border-top:1px solid var(--line);}
+  footer .wrap{max-width:1160px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;}
+  .footer-copy{font-size:13px;color:var(--mist);}
+
+  @media (max-width:640px){
+    .wrap{padding:0 20px;}
+    .hero{padding:56px 0 44px;}
+    section{padding:52px 0;}
+    .stats{grid-template-columns:1fr;}
+    nav .btn{display:none;}
+  }
+
+  /* ============ SHARED PREMIUM UI (matches landing page) ============ */
+  body{background:var(--obsidian);}
+  .cursor-glow{position:fixed;left:0;top:0;width:560px;height:560px;margin:-280px 0 0 -280px;border-radius:50%;pointer-events:none;z-index:60;mix-blend-mode:screen;
+    background:radial-gradient(circle, rgba(228,196,140,0.09) 0%, rgba(201,164,106,0.04) 35%, transparent 65%);transform:translate3d(-999px,-999px,0);opacity:0;transition:opacity .5s var(--ease);}
+  body.fx-on .cursor-glow{opacity:1;}
+
+  .hero{position:sticky;top:var(--nav-h);height:calc(92svh - var(--nav-h));min-height:560px;overflow:hidden;display:flex;align-items:flex-start;padding:84px 0 0;border-bottom:none;}
+  .hero .wrap{position:relative;z-index:3;will-change:transform,opacity;transform-origin:50% 20%;}
+  .hero:before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.5;
+    background:repeating-linear-gradient(115deg, rgba(201,164,106,0.05) 0 2px, transparent 2px 90px), repeating-linear-gradient(25deg, rgba(201,164,106,0.035) 0 2px, transparent 2px 130px);
+    -webkit-mask-image:linear-gradient(180deg, black, transparent 92%);mask-image:linear-gradient(180deg, black, transparent 92%);}
+  .cs-sun{position:absolute;left:50%;bottom:0;width:0;height:0;z-index:1;will-change:transform,opacity;}
+  .cs-bg-chart{left:0;right:0;bottom:0;width:auto;height:48%;opacity:.55;
+    -webkit-mask-image:linear-gradient(90deg, transparent, black 18%, black 82%, transparent);mask-image:linear-gradient(90deg, transparent, black 18%, black 82%, transparent);}
+  .cs-bg-chart svg{width:100%;height:100%;display:block;overflow:visible;}
+  .cs-bg-chart .cg{stroke:rgba(246,243,238,0.05);stroke-width:1;fill:none;vector-effect:non-scaling-stroke;}
+  .cs-bg-chart .cl{fill:none;stroke:#E4C48C;stroke-width:2;vector-effect:non-scaling-stroke;stroke-dasharray:1400;stroke-dashoffset:1400;animation:csdraw 2.8s .5s cubic-bezier(.65,0,.35,1) forwards;filter:drop-shadow(0 0 6px rgba(228,196,140,0.6));}
+  .cs-bg-chart .ca{opacity:0;animation:csfade 1.2s 2.2s forwards;}
+  @keyframes csdraw{to{stroke-dashoffset:0;}}
+  @keyframes csfade{to{opacity:1;}}
+  .hero .eyebrow, .hero h1, .hero .sub, .hero .meta{animation:upin 1s cubic-bezier(.16,1,.3,1) both;}
+  .hero h1{animation-delay:.15s;} .hero .sub{animation-delay:.3s;} .hero .meta{animation-delay:.45s;}
+  .chip{background:rgba(255,255,255,0.05);border-color:rgba(255,255,255,0.12);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);}
+  @keyframes rise{from{translate:0 300px;opacity:0;}to{translate:0 0;opacity:1;}}
+  @keyframes ringin{from{scale:.6;opacity:0;}to{scale:1;opacity:1;}}
+  @keyframes upin{from{opacity:0;translate:0 26px;filter:blur(6px);}to{opacity:1;translate:0 0;filter:blur(0);}}
+
+  .sheet{position:relative;z-index:5;border-radius:40px 40px 0 0;border-top:1px solid var(--line);box-shadow:0 -40px 80px -20px rgba(0,0,0,0.75);
+    background:radial-gradient(700px 500px at 10% 8%, rgba(201,164,106,0.13), transparent 60%),radial-gradient(640px 520px at 92% 34%, rgba(201,164,106,0.10), transparent 60%),radial-gradient(700px 520px at 12% 70%, rgba(201,164,106,0.10), transparent 60%),radial-gradient(640px 520px at 88% 95%, rgba(201,164,106,0.09), transparent 60%),var(--obsidian-2);}
+  .sheet{overflow-x:clip;}
+  .sheet section{border-bottom:none;}
+  .sheet section + section{border-top:1px solid rgba(255,255,255,0.05);}
+  .sheet > section:first-child{padding-top:96px;}
+  footer{position:relative;z-index:5;background:var(--obsidian-2);}
+
+  .step, .stat, .total{
+    background:linear-gradient(155deg, rgba(255,255,255,0.075), rgba(255,255,255,0.02) 45%, rgba(255,255,255,0.035)) !important;
+    -webkit-backdrop-filter:blur(22px) saturate(150%);backdrop-filter:blur(22px) saturate(150%);border:1px solid rgba(255,255,255,0.11) !important;
+    box-shadow:inset 0 1px 0 rgba(255,255,255,0.10), 0 24px 50px -30px rgba(0,0,0,0.85);transition:transform .35s var(--ease), border-color .35s var(--ease);}
+  .total{background:linear-gradient(155deg, rgba(228,196,140,0.16), rgba(255,255,255,0.03) 50%, rgba(228,196,140,0.06)) !important;border-color:rgba(228,196,140,0.45) !important;}
+  .stat:hover{transform:translateY(-5px);}
+  .spot{position:relative;}
+  .spot::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;opacity:0;transition:opacity .35s var(--ease);
+    background:radial-gradient(420px circle at var(--mx,50%) var(--my,50%), rgba(228,196,140,0.16), transparent 45%);}
+  .spot:hover::after{opacity:1;}
+  .spot:hover{border-color:rgba(228,196,140,0.42) !important;}
+  .btn{will-change:transform;}
+
+  /* steps journey */
+  .steps{position:relative;padding-left:40px;}
+  .journey{position:absolute;left:14px;width:2px;background:rgba(255,255,255,0.08);border-radius:2px;}
+  .journey-fill{position:absolute;left:0;top:0;width:100%;height:0;border-radius:2px;background:linear-gradient(180deg,var(--gold),var(--gold-bright));box-shadow:0 0 14px rgba(228,196,140,0.6);}
+  .journey-node{position:absolute;left:15px;width:14px;height:14px;margin:-7px 0 0 -7px;border-radius:50%;background:var(--obsidian-2);border:2px solid rgba(255,255,255,0.18);transition:all .4s var(--ease);z-index:2;}
+  .journey-node.on{border-color:var(--gold-bright);background:var(--gold-bright);box-shadow:0 0 0 6px rgba(228,196,140,0.15), 0 0 18px rgba(228,196,140,0.7);}
+  .step{opacity:.45;transform:translateX(18px);transition:opacity .6s var(--ease), transform .6s var(--ease), border-color .4s var(--ease);}
+  .step.on{opacity:1;transform:none;}
+  .step-num{transition:all .4s var(--ease);}
+  .step.on .step-num{background:var(--gold);color:#20170a;border-color:var(--gold);box-shadow:0 0 22px rgba(228,196,140,0.5);}
+
+  /* scroll reveals */
+  .reveal{opacity:0;transform:translateY(46px);filter:blur(8px);transition:opacity 1s cubic-bezier(.16,1,.3,1), transform 1s cubic-bezier(.16,1,.3,1), filter 1s cubic-bezier(.16,1,.3,1);transition-delay:var(--rd,0ms);}
+  .reveal-left{transform:translateX(-70px);} .reveal-right{transform:translateX(70px);} .reveal-scale{transform:translateY(40px) scale(.94);}
+  .reveal.revealed{opacity:1;transform:none;filter:none;}
+
+  @media (max-width:640px){
+    .hero{padding-top:56px;min-height:520px;}
+    .sheet{border-radius:28px 28px 0 0;}
+  }
+  @media (prefers-reduced-motion: reduce){
+    .reveal,.step{opacity:1 !important;transform:none !important;filter:none !important;}
+    .hero *{animation:none !important;} .cs-bg-chart .cl{stroke-dashoffset:0;} .cs-bg-chart .ca{opacity:1;}
+    .cursor-glow{display:none;}
+  }
+</style>
+
+<script>
+  if('scrollRestoration' in history){ history.scrollRestoration = 'manual'; }
+  function dxTop(){ if(!location.hash){ window.scrollTo(0, 0); } }
+  window.addEventListener('DOMContentLoaded', dxTop);
+  window.addEventListener('load', dxTop);
+  window.addEventListener('pageshow', dxTop);
+</script>
+</head>
+<body>
+<div class="cursor-glow" aria-hidden="true"></div>
+
+<nav>
+  <div class="wrap">
+    <a href="../index.html" class="brand"><img src="../assets/logo.png" alt="Doxarise logo"><span>DOXARISE</span></a>
+    <div style="display:flex;align-items:center;gap:20px;">
+      <a href="../index.html#proof" class="back">← All results</a>
+      <a href="../index.html#audit" class="btn btn-gold btn-sm">Get My Free Content Audit</a>
+    </div>
+  </div>
+</nav>
+
+<main>
+
+<header class="hero">
+  <div class="cs-sun cs-bg-chart" aria-hidden="true">
+    <svg viewBox="0 0 1200 320" preserveAspectRatio="none">
+      <defs><linearGradient id="csArea" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#C9A46A" stop-opacity=".22"/><stop offset="1" stop-color="#C9A46A" stop-opacity="0"/></linearGradient></defs>
+      <path class="cg" d="M0 80H1200M0 160H1200M0 240H1200"/>
+      <path class="ca" d="M0 300 C120 298 220 294 330 288 S520 276 620 258 S800 214 900 168 S1080 60 1200 22 L1200 320 L0 320Z" fill="url(#csArea)"/>
+      <path class="cl" d="M0 300 C120 298 220 294 330 288 S520 276 620 258 S800 214 900 168 S1080 60 1200 22"/>
+    </svg>
+  </div>
+  <div class="wrap">
+    <span class="eyebrow">Case Study · Home Inspection Company · Established Brand</span>
+    <h1>From 51K to 11.4M views in 4 months.</h1>
+    <p class="sub">An established home inspection company with social accounts almost nobody was seeing.</p>
+    <div class="meta">
+      <span class="chip">Instagram</span>
+      <span class="chip">Facebook</span>
+      <span class="chip">TikTok</span>
+      <span class="chip">Google Business Profile</span>
+    </div>
+  </div>
+</header>
+
+<div class="sheet">
+<section>
+  <div class="wrap">
+    <span class="eyebrow">01 · Objective</span>
+    <h2>Be the inspector people already trust before they need one.</h2>
+    <p>From January to May, the company's Instagram and Facebook accounts pulled about 51K views combined. The work was good. Almost nobody was seeing it.</p>
+    <p>The goal wasn't followers for their own sake. It was to make the company look as credible online as it is in person, so buyers and agents already know the name when they need an inspection.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <span class="eyebrow">02 · What We Did</span>
+    <h2>They film. We handle the rest.</h2>
+    <div class="steps">
+      <div class="step"><span class="step-num">01</span><div><h3>Research</h3><p>Studied what was already winning in home inspection content and with local buyers, and planned content around it.</p></div></div>
+      <div class="step"><span class="step-num">02</span><div><h3>Content direction</h3><p>Told the team exactly what type of content we needed, and which topics and findings to show or talk about on camera.</p></div></div>
+      <div class="step"><span class="step-num">03</span><div><h3>Editing</h3><p>Edited and refined every video they filmed, in a style matched to the brand and the audience.</p></div></div>
+      <div class="step"><span class="step-num">04</span><div><h3>Hooks</h3><p>Added a scroll-stopping hook text overlay to the first 3 seconds of every video.</p></div></div>
+      <div class="step"><span class="step-num">05</span><div><h3>Posting and Google Business Profile</h3><p>Posted on a consistent schedule across Instagram, Facebook, and TikTok, and kept the Google Business Profile active, so people who found the company on social had a strong page to land on.</p></div></div>
+      <div class="step"><span class="step-num">06</span><div><h3>Data review</h3><p>Checked what worked and what didn't every month, and made more of what worked.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <span class="eyebrow">03 · Results</span>
+    <h2>Before vs. after.</h2>
+    <p class="period"><strong>Before:</strong> January to May 2026 (5 months) &nbsp;·&nbsp; <strong>After:</strong> June to September 2026 (4 months)</p>
+
+    <div class="group-label">Views</div>
+    <div class="stats">
+      <div class="stat">
+        <div class="label">Facebook views</div>
+        <div class="row"><span class="before">17.5K</span><span class="arrow">→</span><span class="after">8.5M</span></div>
+      </div>
+      <div class="stat">
+        <div class="label">Instagram views</div>
+        <div class="row"><span class="before">33.5K</span><span class="arrow">→</span><span class="after">2.9M</span></div>
+      </div>
+    </div>
+    <div class="total">
+      <span class="label">Total views, Instagram + Facebook</span>
+      <span class="after">51K → 11.4M</span>
+    </div>
+
+    <div class="group-label">Audience</div>
+    <div class="stats">
+      <div class="stat">
+        <div class="label">Facebook followers</div>
+        <div class="row"><span class="before">1,083</span><span class="arrow">→</span><span class="after">5,501</span></div>
+        <p class="note">+4,418 in 4 months, vs. +41 in the 5 months before.</p>
+      </div>
+      <div class="stat">
+        <div class="label">Instagram followers gained</div>
+        <div class="row"><span class="before">+82</span><span class="arrow">→</span><span class="after">+373</span></div>
+        <p class="note">About 4.5x faster growth, in less time.</p>
+      </div>
+    </div>
+
+    <div class="group-label">Google Business Profile</div>
+    <div class="stats">
+      <div class="stat wide">
+        <div class="label">Calls from Google per month</div>
+        <div class="row"><span class="before">21</span><span class="arrow">→</span><span class="after">49</span></div>
+        <p class="note">May 2026 vs. August 2026, the peak month. September stayed above where we started.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>Want to know what's holding your videos back?</h2>
+    <p>Send me your profile. I'll watch your last 10 videos and tell you what I'd change.</p>
+    <a href="../index.html#audit" class="btn btn-gold">Get My Free Content Audit</a>
+  </div>
+</section>
+
+</div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <a href="../index.html" class="brand"><img src="../assets/logo.png" alt="Doxarise logo" style="height:24px;width:24px;"><span style="font-size:14px;">DOXARISE</span></a>
+    <div class="footer-copy">© 2026 Doxarise. Strategy. Growth. Impact.</div>
+  </div>
+</footer>
+
+
+<script>
+(function(){
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var fine = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+
+  /* reveal targets */
+  document.querySelectorAll('.sheet section').forEach(function(sec){
+    Array.prototype.forEach.call(sec.querySelectorAll('.wrap > .eyebrow, .wrap > h2, .wrap > p, .wrap > .period, .group-label'), function(el, i){
+      el.classList.add('reveal'); el.style.setProperty('--rd', (i * 80) + 'ms');
+    });
+    Array.prototype.forEach.call(sec.querySelectorAll('.stats'), function(g){
+      Array.prototype.forEach.call(g.children, function(el, i){ el.classList.add('reveal', i % 2 ? 'reveal-right' : 'reveal-left'); el.style.setProperty('--rd', (i * 90) + 'ms'); });
+    });
+    Array.prototype.forEach.call(sec.querySelectorAll('.total'), function(el){ el.classList.add('reveal', 'reveal-scale'); });
+  });
+  document.querySelectorAll('.step, .stat, .total').forEach(function(el){ el.classList.add('spot'); });
+
+  var revealEls = document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window && !reduceMotion){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add('revealed'); io.unobserve(en.target); countUp(en.target); } });
+    }, {threshold: 0.15});
+    revealEls.forEach(function(el){ io.observe(el); });
+  } else { revealEls.forEach(function(el){ el.classList.add('revealed'); }); }
+
+  /* count-up for result numbers */
+  function countUp(box){
+    if(reduceMotion) return;
+    Array.prototype.forEach.call(box.querySelectorAll ? box.querySelectorAll('.after') : [], function(el){
+      var txt = el.textContent.trim();
+      var m = txt.match(/^([+]?)([\d,]*\.?\d+)([A-Za-z+ ]*)$/); if(!m) return;
+      var pre = m[1], raw = m[2], suf = m[3], target = parseFloat(raw.replace(/,/g, ''));
+      var dec = raw.indexOf('.') > -1 ? raw.split('.')[1].length : 0, commas = raw.indexOf(',') > -1;
+      var start = null, dur = 1500;
+      function fmt(v){ var s = v.toFixed(dec); if(commas){ s = Number(s).toLocaleString('en-US', {minimumFractionDigits: dec, maximumFractionDigits: dec}); } return pre + s + suf; }
+      function step(t){ if(!start) start = t; var p = Math.min((t - start) / dur, 1), e = 1 - Math.pow(1 - p, 3); el.textContent = fmt(target * e); if(p < 1) requestAnimationFrame(step); else el.textContent = txt; }
+      requestAnimationFrame(step);
+    });
+  }
+
+  /* steps journey */
+  var steps = document.querySelector('.steps');
+  if(steps){
+    var cards = Array.prototype.slice.call(steps.querySelectorAll('.step'));
+    var track = document.createElement('div'); track.className = 'journey'; track.innerHTML = '<div class="journey-fill"></div>'; steps.appendChild(track);
+    var fill = track.firstChild;
+    var nodes = cards.map(function(){ var n = document.createElement('span'); n.className = 'journey-node'; steps.appendChild(n); return n; });
+    function layout(){
+      var s = steps.getBoundingClientRect();
+      var ys = cards.map(function(c){ var r = c.getBoundingClientRect(); return r.top - s.top + Math.min(42, r.height / 2); });
+      track.style.top = ys[0] + 'px'; track.style.height = (ys[ys.length - 1] - ys[0]) + 'px';
+      nodes.forEach(function(n, i){ n.style.top = ys[i] + 'px'; });
+      update();
+    }
+    function update(){
+      var r = steps.getBoundingClientRect(), vh = window.innerHeight;
+      var p = reduceMotion ? 1 : Math.min(Math.max((vh * 0.75 - r.top) / (r.height), 0), 1);
+      fill.style.height = (p * 100) + '%';
+      var n = cards.length;
+      cards.forEach(function(c, i){ var on = p > 0 && p >= i / (n - 1) - 0.001; c.classList.toggle('on', on); nodes[i].classList.toggle('on', on); });
+    }
+    layout(); window.addEventListener('resize', layout);
+    window.addEventListener('scroll', function(){ requestAnimationFrame(update); }, {passive:true});
+  }
+
+  /* hero sinks back */
+  var hero = document.querySelector('.hero'), heroIn = hero && hero.querySelector('.wrap'), sun = document.querySelector('.cs-sun');
+  if(hero && !reduceMotion){
+    var ticking = false;
+    function layer(){ ticking = false;
+      var p = Math.min(Math.max(window.scrollY / (hero.offsetHeight * 0.9), 0), 1);
+      heroIn.style.transform = 'translateY(' + (-40 * p) + 'px) scale(' + (1 - 0.1 * p) + ')'; heroIn.style.opacity = String(1 - 0.85 * p);
+      if(sun){ sun.style.transform = 'scale(' + (1 - 0.18 * p) + ')'; sun.style.opacity = String(1 - 0.6 * p); }
+    }
+    window.addEventListener('scroll', function(){ if(!ticking){ ticking = true; requestAnimationFrame(layer); } }, {passive:true}); layer();
+  }
+
+  /* cursor glow, hover light, magnetic buttons */
+  if(fine && !reduceMotion){
+    document.body.classList.add('fx-on');
+    var glow = document.querySelector('.cursor-glow'), gx = -999, gy = -999, tx = -999, ty = -999;
+    window.addEventListener('mousemove', function(e){ tx = e.clientX; ty = e.clientY; }, {passive:true});
+    (function loop(){ gx += (tx - gx) * 0.12; gy += (ty - gy) * 0.12; glow.style.transform = 'translate3d(' + gx + 'px,' + gy + 'px,0)'; requestAnimationFrame(loop); })();
+    document.querySelectorAll('.spot').forEach(function(c){
+      c.addEventListener('mousemove', function(e){ var r = c.getBoundingClientRect(); c.style.setProperty('--mx', (e.clientX - r.left) + 'px'); c.style.setProperty('--my', (e.clientY - r.top) + 'px'); });
+    });
+    document.querySelectorAll('.btn').forEach(function(b){
+      b.addEventListener('mousemove', function(e){ var r = b.getBoundingClientRect(); b.style.transform = 'translate(' + ((e.clientX - r.left - r.width / 2) * 0.18) + 'px,' + ((e.clientY - r.top - r.height / 2) * 0.28) + 'px)'; });
+      b.addEventListener('mouseleave', function(){ b.style.transform = ''; });
+    });
+  }
+})();
+</script>
+</body>
+</html>

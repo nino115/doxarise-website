@@ -3,15 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Doxarise — Become the Obvious Choice</title>
-<meta name="description" content="Doxarise builds the organic content system that makes local service businesses the obvious choice in their market — real strategy, real content, real results.">
+<title>Doxarise | Done-for-You Short-Form Video</title>
+<meta name="description" content="Short-form videos people actually stop and watch. Research, editing, hooks, and posting, done for you. You just show up and film.">
 <meta name="theme-color" content="#0B0B0C">
 <link rel="icon" href="assets/logo.png" type="image/png">
 <link rel="canonical" href="https://doxarise.com/">
 
 <meta property="og:type" content="website">
-<meta property="og:title" content="Doxarise — Become the Obvious Choice">
-<meta property="og:description" content="We build the system that makes you the obvious choice in your market.">
+<meta property="og:title" content="Doxarise | Done-for-You Short-Form Video">
+<meta property="og:description" content="Short-form videos people actually stop and watch. You just show up and film.">
 <meta property="og:image" content="https://doxarise.com/assets/doxarise-lockup.png">
 <meta name="twitter:card" content="summary">
 
@@ -346,6 +346,7 @@
   /* ============ AUDIT / FORM ============ */
   .cta-section{background:var(--obsidian-2);}
   .cta-inner{display:grid;grid-template-columns:0.9fr 1.1fr;gap:56px;align-items:start;}
+  .cta-inner h2{margin-bottom:14px;}
   .cta-list{margin-top:22px;}
   .cta-list li{display:flex;gap:10px;color:var(--bone);font-size:14.5px;padding:8px 0;}
   .cta-list li:before{content:"✓";color:var(--gold);font-weight:700;}
@@ -396,9 +397,198 @@
     .hero{padding:56px 0 56px;}
     section{padding:60px 0;}
   }
+
+  /* ============ METHOD ============ */
+  .method-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
+  .method-card{background:var(--card);border:1px solid var(--card-border);border-radius:var(--radius-lg);padding:30px 26px;transition:transform .3s var(--ease), border-color .3s var(--ease);}
+  .method-card:hover{transform:translateY(-6px);border-color:rgba(201,164,106,0.4);}
+  .method-num{display:inline-flex;align-items:center;justify-content:center;width:46px;height:46px;border-radius:50%;border:1px solid var(--gold);font-family:'Manrope',sans-serif;font-weight:800;color:var(--gold-bright);margin-bottom:18px;}
+  .method-card h3{color:var(--bone);margin-bottom:10px;}
+  .method-card p{font-size:14.5px;}
+  .method-foot{text-align:center;margin-top:36px;color:var(--bone);font-size:15px;}
+
+  /* ============ FIT ============ */
+  .fit-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:960px;margin:0 auto;}
+  .fit-card{background:var(--card);border:1px solid var(--card-border);border-radius:var(--radius-lg);padding:34px;}
+  .fit-card h3{color:var(--bone);margin-bottom:16px;}
+  .fit-card ul li{display:flex;gap:12px;color:var(--bone);font-size:15px;padding:11px 0;border-top:1px solid var(--line);}
+  .fit-card.yes ul li:before{content:"✓";color:var(--gold);font-weight:800;}
+  .fit-card.no ul li:before{content:"✕";color:var(--mist);font-weight:800;}
+  .fit-card.no{background:transparent;}
+
+  /* ============ PRICING ============ */
+  .price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;align-items:stretch;}
+  .price-card{background:var(--card);border:1px solid var(--card-border);border-radius:var(--radius-lg);padding:34px 30px;display:flex;flex-direction:column;}
+  .price-card.featured{border-color:var(--gold);box-shadow:0 20px 50px -30px rgba(201,164,106,0.55);background:linear-gradient(180deg, rgba(201,164,106,0.07), var(--card) 40%);}
+  .price-card h3{color:var(--bone);margin-bottom:12px;}
+  .price{font-family:'Manrope',sans-serif;font-weight:800;font-size:2.4rem;color:var(--gold-bright);line-height:1;margin-bottom:6px;}
+  .price span{display:block;font-family:'Inter',sans-serif;font-weight:500;font-size:13px;color:var(--mist);margin-top:10px;}
+  .price-card > p{margin:16px 0 18px;font-size:14.5px;}
+  .price-card ul li{display:flex;gap:10px;color:var(--bone);font-size:14.5px;padding:9px 0;border-top:1px solid var(--line);}
+  .price-card ul li:before{content:"✓";color:var(--gold);font-weight:700;}
+  .price-note{margin-top:auto !important;padding-top:16px;font-size:13px !important;font-style:italic;margin-bottom:0 !important;}
+  .pricing-foot{text-align:center;margin-top:34px;color:var(--bone);font-size:15px;}
+
+  @media (max-width:1000px){
+    .method-grid{grid-template-columns:1fr 1fr;}
+    .price-grid{grid-template-columns:1fr;max-width:520px;margin:0 auto;}
+  }
+  @media (max-width:700px){
+    .method-grid, .fit-grid{grid-template-columns:1fr;}
+  }
+
+  /* ============ PREMIUM INTERACTIONS ============ */
+  .cursor-glow{position:fixed;left:0;top:0;width:560px;height:560px;margin:-280px 0 0 -280px;border-radius:50%;pointer-events:none;z-index:60;mix-blend-mode:screen;
+    background:radial-gradient(circle, rgba(228,196,140,0.09) 0%, rgba(201,164,106,0.04) 35%, transparent 65%);
+    transform:translate3d(-999px,-999px,0);opacity:0;transition:opacity .5s var(--ease);will-change:transform;}
+  body.fx-on .cursor-glow{opacity:1;}
+
+  .spot:hover{border-color:rgba(201,164,106,0.45);}
+
+  .btn-gold, .btn-outline{will-change:transform;}
+
+  .hero .accent{background:linear-gradient(90deg,var(--gold-bright) 0%,#FFF1D2 25%,var(--gold-bright) 50%,var(--gold) 75%,var(--gold-bright) 100%);background-size:200% auto;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shine 7s linear infinite;}
+  @keyframes shine{to{background-position:200% center;}}
+
+  .hero-inner{z-index:3;}
+  @keyframes floaty{0%,100%{translate:0 0;}50%{translate:0 -12px;}}
+  @keyframes sweep{0%,100%{transform:translateX(-30%);}50%{transform:translateX(30%);}}
+  @keyframes progress{to{width:100%;}}
+  @keyframes pop{0%,100%{transform:scale(1);}50%{transform:scale(1.18);}}
+  @media (prefers-reduced-motion: reduce){.cursor-glow{display:none;}.hero .accent{animation:none;}}
+
+  /* ============ HERO SUN + LAYERED SCROLL ============ */
+  .hero{position:sticky;top:var(--nav-h);height:calc(100svh - var(--nav-h));min-height:700px;padding:72px 0 0;display:flex;align-items:flex-start;}
+  .hero .wrap.hero-inner{will-change:transform,opacity;transform-origin:50% 30%;}
+  .sun{--R:470px;--ring-top:600px;position:absolute;left:50%;top:calc(var(--ring-top) + var(--R));width:0;height:0;transform-origin:50% 0;will-change:transform,opacity;z-index:1;}
+  .sun-glow{position:absolute;left:-760px;top:-760px;width:1520px;height:1520px;border-radius:50%;background:radial-gradient(circle, rgba(228,196,140,0.30) 0%, rgba(201,164,106,0.14) 28%, rgba(201,164,106,0.05) 45%, transparent 62%);pointer-events:none;}
+  .sun-core{position:absolute;left:-400px;top:-400px;width:800px;height:800px;border-radius:50%;
+    background:radial-gradient(circle at 50% 30%, #F3D9A4 0%, #D9B172 35%, #A88148 70%, #6E532C 100%);
+    box-shadow:0 0 120px 30px rgba(228,196,140,0.35), 0 0 260px 80px rgba(201,164,106,0.18);opacity:.92;}
+  .wheel{position:absolute;left:0;top:0;width:0;height:0;animation:spin 70s linear infinite;}
+  .ring{position:absolute;left:calc(-1 * var(--R));top:calc(-1 * var(--R));width:calc(2 * var(--R));height:calc(2 * var(--R));border-radius:50%;border:1px solid rgba(228,196,140,0.22);box-shadow:0 0 0 18px rgba(228,196,140,0.025), 0 0 0 64px rgba(228,196,140,0.02);}
+  .orb{position:absolute;left:0;top:0;transform:rotate(calc(var(--i) * 30deg)) translateY(calc(-1 * var(--R)));}
+  .orb .upright{transform:rotate(calc(var(--i) * -30deg));}
+  .orb span{display:flex;align-items:center;justify-content:center;width:64px;height:64px;margin:-32px 0 0 -32px;border-radius:20px;color:var(--gold-bright);
+    border:1px solid rgba(228,196,140,0.38);background:linear-gradient(150deg, rgba(44,37,28,0.96), rgba(18,16,14,0.96));
+    box-shadow:0 18px 40px -16px rgba(0,0,0,0.9), 0 0 28px -8px rgba(228,196,140,0.45);animation:spin-rev 70s linear infinite;}
+  .orb svg{width:28px;height:28px;}
+  @keyframes spin{to{transform:rotate(360deg);}}
+  @keyframes spin-rev{to{transform:rotate(-360deg);}}
+
+  .sheet{position:relative;z-index:5;background:var(--obsidian-2);border-radius:40px 40px 0 0;border-top:1px solid var(--line);
+    box-shadow:0 -40px 80px -20px rgba(0,0,0,0.75);margin-top:-1px;}
+  .sheet > section{background:transparent !important;}
+  .sheet > section:first-child{padding-top:110px;}
+  footer{background:var(--obsidian-2);position:relative;z-index:5;}
+
+  @media (max-width:900px){
+    .sun{--R:300px;}
+    .sun-core{left:-210px;top:-210px;width:420px;height:420px;}
+    .orb span{width:52px;height:52px;margin:-26px 0 0 -26px;border-radius:16px;}
+    .orb svg{width:23px;height:23px;}
+    .hero{min-height:640px;}
+    .sheet{border-radius:28px 28px 0 0;}
+  }
+  @media (max-width:640px){
+    .hero{padding-top:44px;}
+    .hero .cta-row{margin-bottom:36px;}
+    .stat-row{flex-wrap:nowrap;gap:26px;}
+    .stat .num{font-size:1.65rem;}
+    .stat .lbl{font-size:.82rem;}
+    .sun{--R:250px;}
+    .sun-core{left:-190px;top:-190px;width:380px;height:380px;}
+  }
+  @media (prefers-reduced-motion: reduce){.wheel,.orb span{animation:none;}}
+
+  /* ============ INTRO ANIMATION ============ */
+  .sun-rise{position:absolute;left:0;top:0;width:0;height:0;animation:rise 2s .15s cubic-bezier(.16,1,.3,1) both;}
+  .orb .upright{animation:popin .7s cubic-bezier(.34,1.56,.64,1) both;animation-delay:calc(1.1s + var(--i) * .07s);}
+  .ring{animation:ringin 1.6s .5s cubic-bezier(.16,1,.3,1) both;}
+  .hero .eyebrow, .hero h1, .hero .sub, .hero .cta-row, .hero .stat-row{animation:upin 1s cubic-bezier(.16,1,.3,1) both;}
+  .hero h1{animation-delay:.15s;} .hero .sub{animation-delay:.3s;} .hero .cta-row{animation-delay:.45s;} .hero .stat-row{animation-delay:.6s;}
+  .hero .reveal{opacity:1;transform:none;}
+  @keyframes rise{from{translate:0 340px;opacity:0;}to{translate:0 0;opacity:1;}}
+  @keyframes popin{from{scale:0;opacity:0;}to{scale:1;opacity:1;}}
+  @keyframes ringin{from{scale:.6;opacity:0;}to{scale:1;opacity:1;}}
+  @keyframes upin{from{opacity:0;translate:0 26px;filter:blur(6px);}to{opacity:1;translate:0 0;filter:blur(0);}}
+
+  /* ============ GLASS CARDS ============ */
+  .sheet{background:
+      radial-gradient(700px 500px at 12% 6%, rgba(201,164,106,0.13), transparent 60%),
+      radial-gradient(600px 520px at 92% 22%, rgba(201,164,106,0.10), transparent 60%),
+      radial-gradient(760px 560px at 8% 46%, rgba(201,164,106,0.10), transparent 60%),
+      radial-gradient(640px 520px at 90% 66%, rgba(201,164,106,0.10), transparent 60%),
+      radial-gradient(700px 520px at 20% 88%, rgba(201,164,106,0.10), transparent 60%),
+      var(--obsidian-2);}
+  .method-card, .price-card, .fit-card, .cs-card, .step-body, .faq-item, .compare-table, .cta-inner form, .service-card{
+    background:linear-gradient(155deg, rgba(255,255,255,0.075), rgba(255,255,255,0.02) 45%, rgba(255,255,255,0.035)) !important;
+    -webkit-backdrop-filter:blur(22px) saturate(150%);backdrop-filter:blur(22px) saturate(150%);
+    border:1px solid rgba(255,255,255,0.11) !important;
+    box-shadow:inset 0 1px 0 rgba(255,255,255,0.10), inset 0 0 0 1px rgba(255,255,255,0.02), 0 24px 50px -30px rgba(0,0,0,0.85);}
+  .price-card.featured{background:linear-gradient(155deg, rgba(228,196,140,0.16), rgba(255,255,255,0.03) 50%, rgba(228,196,140,0.06)) !important;border-color:rgba(228,196,140,0.45) !important;}
+  .fit-card.no{background:linear-gradient(155deg, rgba(255,255,255,0.04), rgba(255,255,255,0.01)) !important;}
+  .compare-cell.win{background:rgba(228,196,140,0.06);}
+  .field input, .field select, .field textarea{background:rgba(0,0,0,0.35);border-color:rgba(255,255,255,0.10);}
+
+  /* hover light that works everywhere */
+  .spot{position:relative;}
+  .spot::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;opacity:0;transition:opacity .35s var(--ease);
+    background:radial-gradient(420px circle at var(--mx,50%) var(--my,50%), rgba(228,196,140,0.16), transparent 45%);}
+  .spot:hover::after{opacity:1;}
+  .spot:hover{border-color:rgba(228,196,140,0.42) !important;}
+  .price-card, .fit-card, .step-body{transition:transform .35s var(--ease), border-color .35s var(--ease);}
+  .price-card:hover, .fit-card:hover{transform:translateY(-6px);}
+
+  /* ============ METHOD JOURNEY ============ */
+  .method-grid{position:relative;margin-top:38px;}
+  .journey{position:absolute;background:rgba(255,255,255,0.08);border-radius:3px;pointer-events:none;z-index:1;}
+  .journey-fill{position:absolute;left:0;top:0;border-radius:3px;background:linear-gradient(90deg,var(--gold),var(--gold-bright));box-shadow:0 0 14px rgba(228,196,140,0.6);}
+  .journey.h{height:2px;} .journey.h .journey-fill{height:100%;width:0;}
+  .journey.v{width:2px;} .journey.v .journey-fill{width:100%;height:0;background:linear-gradient(180deg,var(--gold),var(--gold-bright));}
+  .journey-node{position:absolute;width:14px;height:14px;margin:-7px 0 0 -7px;border-radius:50%;background:var(--obsidian-2);border:2px solid rgba(255,255,255,0.18);z-index:2;transition:all .4s var(--ease);pointer-events:none;}
+  .journey-node.on{border-color:var(--gold-bright);background:var(--gold-bright);box-shadow:0 0 0 6px rgba(228,196,140,0.15), 0 0 18px rgba(228,196,140,0.7);}
+  .method-card{opacity:.45;transform:translateY(14px);transition:opacity .6s var(--ease), transform .6s var(--ease), border-color .4s var(--ease) !important;}
+  .method-card.on{opacity:1;transform:none;}
+  .method-card.on .method-num{background:var(--gold);color:#20170a;border-color:var(--gold);box-shadow:0 0 22px rgba(228,196,140,0.5);}
+  .method-num{transition:all .4s var(--ease);}
+  @media (max-width:700px){ .method-grid{padding-left:30px;} }
+  @media (min-width:901px) and (max-height:780px){
+    .hero{padding-top:34px;}
+    .hero h1{font-size:clamp(2rem,3.6vw,2.9rem);margin-bottom:14px;}
+    .hero .sub{margin-bottom:24px;}
+    .hero .cta-row{margin-bottom:30px;}
+    .hero .eyebrow{margin-bottom:10px;}
+  }
+  @media (prefers-reduced-motion: reduce){ .method-card{opacity:1;transform:none;} .sun-rise,.orb .upright,.ring,.hero *{animation:none !important;} }
+
+  /* ============ 3D RESULTS CAROUSEL ============ */
+  .cs-carousel{max-width:760px;}
+  .cs-viewport{overflow:visible;perspective:1600px;border-radius:0;}
+  .cs-track{position:relative;display:block;transition:none;transform:none !important;touch-action:pan-y;cursor:grab;user-select:none;-webkit-user-select:none;}
+  .cs-track.dragging{cursor:grabbing;}
+  .cs-track .cs-card{position:absolute;left:0;top:0;width:100%;transform-origin:50% 50%;
+    transition:transform .8s cubic-bezier(.16,1,.3,1), opacity .6s var(--ease), filter .6s var(--ease);}
+  .cs-track.dragging .cs-card{transition:none;}
+  .cs-arrow{z-index:200;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);background:rgba(255,255,255,0.06);}
+  .cs-prev{left:-80px;} .cs-next{right:-80px;}
+  @media (max-width:1000px){ .cs-prev{left:-24px;} .cs-next{right:-24px;} }
+  #proof{overflow:hidden;}
+
+  /* ============ SCROLL REVEALS ============ */
+  .reveal{opacity:0;transform:translateY(46px);filter:blur(8px);
+    transition:opacity 1s cubic-bezier(.16,1,.3,1), transform 1s cubic-bezier(.16,1,.3,1), filter 1s cubic-bezier(.16,1,.3,1);transition-delay:var(--rd,0ms);}
+  .reveal-left{transform:translateX(-70px);}
+  .reveal-right{transform:translateX(70px);}
+  .reveal-scale{transform:translateY(40px) scale(.94);}
+  .reveal.revealed{opacity:1;transform:none;filter:none;}
+  .reveal-delay-1{--rd:120ms;} .reveal-delay-2{--rd:240ms;} .reveal-delay-3{--rd:360ms;}
+  .reveal-delay-1.revealed, .reveal-delay-2.revealed, .reveal-delay-3.revealed{transition-delay:var(--rd);}
+  .section-head.reveal .eyebrow{display:inline-block;}
 </style>
 </head>
 <body>
+<div class="cursor-glow" aria-hidden="true"></div>
 
 <a href="#main" class="skip-link">Skip to content</a>
 
@@ -409,23 +599,25 @@
       <span>DOXARISE</span>
     </a>
     <div class="navlinks">
-      <a href="#case-studies">Case Studies</a>
-      <a href="#process">Process</a>
+      <a href="#method">Method</a>
+      <a href="#proof">Results</a>
+      <a href="#pricing">Pricing</a>
       <a href="#founder">About</a>
     </div>
     <div class="nav-cta">
-      <a href="#audit" class="btn btn-gold btn-sm">Get My Free Audit</a>
+      <a href="#audit" class="btn btn-gold btn-sm">Get My Free Content Audit</a>
       <button class="nav-toggle" aria-expanded="false" aria-controls="mobileMenu" aria-label="Toggle menu">
         <span></span><span></span><span></span>
       </button>
     </div>
   </div>
   <div class="mobile-menu" id="mobileMenu">
-    <a href="#case-studies">Case Studies</a>
-    <a href="#process">Process</a>
+    <a href="#method">Method</a>
+    <a href="#proof">Results</a>
+    <a href="#pricing">Pricing</a>
     <a href="#founder">About</a>
     <a href="#faq">FAQ</a>
-    <a href="#audit" class="btn btn-gold">Get My Free Audit</a>
+    <a href="#audit" class="btn btn-gold">Get My Free Content Audit</a>
   </div>
 </nav>
 
@@ -435,127 +627,209 @@
 <header class="hero" id="top">
   <div class="texture-diagonal"></div>
   <div class="glow-gold"></div>
+  <div class="sun" aria-hidden="true">
+    <div class="sun-rise">
+    <div class="sun-glow"></div>
+    <div class="sun-core"></div>
+    <div class="wheel"><div class="ring"></div><div class="orb" style="--i:0"><div class="upright"><span><svg viewBox="0 0 24 24"><path fill="currentColor" d="M16.6 3c.4 2.2 1.8 3.6 4 3.9v3.1a7.4 7.4 0 0 1-4-1.2v6.4a5.8 5.8 0 1 1-5-5.7v3.2a2.7 2.7 0 1 0 1.9 2.6V3h3.1z"/></svg></span></div></div><div class="orb" style="--i:1"><div class="upright"><span><svg viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="3.9" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.2" cy="6.8" r="1.2" fill="currentColor"/></svg></span></div></div><div class="orb" style="--i:2"><div class="upright"><span><svg viewBox="0 0 24 24"><path fill="currentColor" d="M13.5 21v-7.5h2.6l.4-3h-3V8.6c0-.9.3-1.5 1.6-1.5h1.6V4.4c-.3 0-1.2-.1-2.3-.1-2.3 0-3.9 1.4-3.9 4v2.2H7.9v3h2.6V21h3z"/></svg></span></div></div><div class="orb" style="--i:3"><div class="upright"><span><svg viewBox="0 0 24 24"><rect x="2.5" y="5.5" width="19" height="13" rx="4" fill="none" stroke="currentColor" stroke-width="2"/><path d="M10 9.2v5.6l4.8-2.8z" fill="currentColor"/></svg></span></div></div><div class="orb" style="--i:4"><div class="upright"><span><svg viewBox="0 0 24 24"><path fill="currentColor" d="M16.6 3c.4 2.2 1.8 3.6 4 3.9v3.1a7.4 7.4 0 0 1-4-1.2v6.4a5.8 5.8 0 1 1-5-5.7v3.2a2.7 2.7 0 1 0 1.9 2.6V3h3.1z"/></svg></span></div></div><div class="orb" style="--i:5"><div class="upright"><span><svg viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="3.9" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.2" cy="6.8" r="1.2" fill="currentColor"/></svg></span></div></div><div class="orb" style="--i:6"><div class="upright"><span><svg viewBox="0 0 24 24"><path fill="currentColor" d="M13.5 21v-7.5h2.6l.4-3h-3V8.6c0-.9.3-1.5 1.6-1.5h1.6V4.4c-.3 0-1.2-.1-2.3-.1-2.3 0-3.9 1.4-3.9 4v2.2H7.9v3h2.6V21h3z"/></svg></span></div></div><div class="orb" style="--i:7"><div class="upright"><span><svg viewBox="0 0 24 24"><rect x="2.5" y="5.5" width="19" height="13" rx="4" fill="none" stroke="currentColor" stroke-width="2"/><path d="M10 9.2v5.6l4.8-2.8z" fill="currentColor"/></svg></span></div></div><div class="orb" style="--i:8"><div class="upright"><span><svg viewBox="0 0 24 24"><path fill="currentColor" d="M16.6 3c.4 2.2 1.8 3.6 4 3.9v3.1a7.4 7.4 0 0 1-4-1.2v6.4a5.8 5.8 0 1 1-5-5.7v3.2a2.7 2.7 0 1 0 1.9 2.6V3h3.1z"/></svg></span></div></div><div class="orb" style="--i:9"><div class="upright"><span><svg viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="3.9" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.2" cy="6.8" r="1.2" fill="currentColor"/></svg></span></div></div><div class="orb" style="--i:10"><div class="upright"><span><svg viewBox="0 0 24 24"><path fill="currentColor" d="M13.5 21v-7.5h2.6l.4-3h-3V8.6c0-.9.3-1.5 1.6-1.5h1.6V4.4c-.3 0-1.2-.1-2.3-.1-2.3 0-3.9 1.4-3.9 4v2.2H7.9v3h2.6V21h3z"/></svg></span></div></div><div class="orb" style="--i:11"><div class="upright"><span><svg viewBox="0 0 24 24"><rect x="2.5" y="5.5" width="19" height="13" rx="4" fill="none" stroke="currentColor" stroke-width="2"/><path d="M10 9.2v5.6l4.8-2.8z" fill="currentColor"/></svg></span></div></div></div>
+    </div>
+  </div>
   <div class="wrap hero-inner">
-    <h1 class="reveal">11 inquiries to 20 in a month,<br><span class="accent">not just more views.</span></h1>
-    <p class="sub reveal reveal-delay-1">We build the system that turns local visibility into actual customer inquiries — not just impressions.</p>
+    <span class="eyebrow reveal">Done-for-you short-form video</span>
+    <h1 class="reveal">Short-form videos people<br><span class="accent">actually stop and watch.</span></h1>
+    <p class="sub reveal reveal-delay-1">I turn your expertise into short-form video. Research, editing, hooks, and posting, done for you. You just show up and film.</p>
     <div class="cta-row reveal reveal-delay-2">
-      <a href="#audit-form" class="btn btn-gold">Get My Free Audit</a>
-      <a href="#case-studies" class="btn btn-outline">Case Studies</a>
+      <a href="#audit-form" class="btn btn-gold">Get My Free Content Audit</a>
+      <a href="#proof" class="btn btn-outline">See the Results</a>
     </div>
     <div class="stat-row reveal reveal-delay-3">
-      <div class="stat"><div class="num">600%</div><div class="lbl">more new inquiries</div></div>
-      <div class="stat"><div class="num">11→20</div><div class="lbl">conversations a month</div></div>
+      <div class="stat"><div class="num" data-count="11.4" data-dec="1" data-suffix="M">11.4M</div><div class="lbl">views for a client in 4 months</div></div>
+      <div class="stat"><div class="num" data-count="800" data-dec="0" data-suffix="K+">800K+</div><div class="lbl">views on a single video</div></div>
     </div>
-    <p class="stat-caption reveal reveal-delay-3">Results from an active inspection services client, zero ad spend.</p>
   </div>
 </header>
 
-<!-- ============ SERVICES ============ -->
-<section class="services" id="services">
+<div class="sheet">
+<!-- ============ METHOD ============ -->
+<section class="services" id="method">
   <div class="wrap">
     <div class="section-head center reveal">
-      <span class="eyebrow">What You Get</span>
-      <h2>Two ways to work together.</h2>
-      <p>Which one fits depends on where your business is right now, not a fixed package.</p>
+      <span class="eyebrow">The Method</span>
+      <h2>Most editors just cut clips.<br>We run the whole loop.</h2>
+      <p>Every month, every video goes through the same four steps. Step four feeds straight back into step one.</p>
     </div>
-    <div class="service-grid">
-      <div class="service-card reveal">
-        <span class="service-tag">For businesses starting from zero</span>
-        <h3>Growth Foundation</h3>
-        <p>A one-time build. We audit where you stand, build your strategy, and hand you a working system.</p>
-        <ul>
-          <li>Full business &amp; competitor analysis</li>
-          <li>Documented content strategy</li>
-          <li>Google Business Profile optimization</li>
-          <li>Two weeks of content, built and ready</li>
-        </ul>
+    <div class="method-grid" id="methodGrid">
+      <div class="journey" aria-hidden="true"><div class="journey-fill"></div></div>
+      <div class="method-card spot">
+        <span class="method-num">01</span>
+        <h3>Research</h3>
+        <p>We study what's already winning in your niche and with your audience before you film a single video.</p>
       </div>
-      <div class="service-card reveal reveal-delay-1">
-        <span class="service-tag">For businesses ready to grow</span>
-        <h3>Growth Management</h3>
-        <p>Ongoing execution. Strategy, content, and reporting, managed month to month.</p>
-        <ul>
-          <li>Bi-weekly content planning &amp; production</li>
-          <li>Ongoing GBP management</li>
-          <li>Monthly performance reporting</li>
-          <li>Quarterly strategy refresh</li>
-        </ul>
+      <div class="method-card spot">
+        <span class="method-num">02</span>
+        <h3>Hook</h3>
+        <p>The first 3 seconds decide if anyone keeps watching. Some people deliver a hook best out loud, some brands win with a visual. We find what works for yours.</p>
       </div>
-    </div>
-
-    <div class="who-for reveal">
-      <h4>Built for local service businesses.</h4>
-      <p>Local businesses that live or die on visual content and reputation, not enterprise clients, not national brands.</p>
-      <div class="ticker-wrap">
-        <div class="ticker-track" id="tickerTrack">
-          <span class="ticker-item">Home Inspection</span>
-          <span class="ticker-item">Fitness Studios &amp; Gyms</span>
-          <span class="ticker-item">Auto Detailing</span>
-          <span class="ticker-item">Pet Grooming</span>
-          <span class="ticker-item">Photography</span>
-          <span class="ticker-item">Cleaning Services</span>
-          <span class="ticker-item">Landscaping</span>
-        </div>
+      <div class="method-card spot">
+        <span class="method-num">03</span>
+        <h3>Edit</h3>
+        <p>Editing matched to your brand, your niche, and your audience. Never a generic template.</p>
+      </div>
+      <div class="method-card spot">
+        <span class="method-num">04</span>
+        <h3>Data</h3>
+        <p>We look at what worked and what didn't, then make more of what works. The plan gets sharper every month.</p>
       </div>
     </div>
+    <p class="method-foot reveal">Your content is balanced across reach, trust, and offer videos based on where your brand is right now.</p>
   </div>
 </section>
 
-<!-- ============ CASE STUDIES ============ -->
-<section id="case-studies">
+<!-- ============ PROOF ============ -->
+<section id="proof">
   <div class="wrap">
     <div class="section-head center reveal">
       <span class="eyebrow">Proof, Not Promises</span>
-      <h2>What we built, and what it did.</h2>
-      <p>This is what happens when the system actually runs.</p>
+      <h2>What the method did.</h2>
+      <p>Real numbers from real accounts, pulled straight from their analytics.</p>
     </div>
 
-    <!-- EDITABLE: swap in new case studies here as they're provided. Each slide follows the
-         same structure: industry tag, title, description, result label + line, CTA. -->
-    <div class="cs-carousel reveal" id="csCarousel" role="region" aria-roledescription="carousel" aria-label="Case studies" tabindex="0">
-      <button class="cs-arrow cs-prev" aria-label="Previous case study">
+    <!-- EDITABLE: swap in new case studies here. Only verified, permissioned numbers. -->
+    <div class="cs-carousel reveal reveal-scale" id="csCarousel" role="region" aria-roledescription="carousel" aria-label="Results" tabindex="0">
+      <button class="cs-arrow cs-prev" aria-label="Previous result">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </button>
       <div class="cs-viewport">
         <div class="cs-track" id="csTrack">
 
-          <div class="cs-card" role="group" aria-roledescription="slide" aria-label="Case study 1 of 3">
-            <span class="cs-industry">Home Inspection</span>
-            <h3>From 11 to 20 new customer conversations a month</h3>
-            <p class="cs-desc">Took over content and Google Business Profile execution for an inspection company. Same system, focused on turning visibility into actual contact.</p>
+          <div class="cs-card spot" role="group" aria-roledescription="slide" aria-label="Result 1 of 3">
+            <span class="cs-industry">Home Inspection Company · Established Brand</span>
+            <h3>From 51K to 11.4M views in 4 months</h3>
+            <p class="cs-desc">An established local inspection company with accounts that barely got seen. In the 5 months before we started, Instagram and Facebook pulled 51K views combined. In the 4 months after, 11.4M. Facebook followers grew from about 1,000 to 5,500.</p>
             <div class="cs-result">
-              <div><div class="cs-field-label">Result</div><div class="cs-metric">600% increase in new customer contacts</div></div>
-              <a href="#audit-form" class="btn btn-outline btn-sm">Learn More</a>
+              <div><div class="cs-field-label">Result</div><div class="cs-metric">8.5M Facebook + 2.9M Instagram views</div></div>
+              <a href="case-studies/home-inspection-established.html" class="btn btn-outline btn-sm">Learn More</a>
             </div>
           </div>
 
-          <div class="cs-card" role="group" aria-roledescription="slide" aria-label="Case study 2 of 3">
-            <span class="cs-industry">Digital Products</span>
-            <h3>62 organic sales in 30 days, zero ad spend</h3>
-            <p class="cs-desc">Used niche communities and value-driven posts to drive digital product sales without paid ads.</p>
+          <div class="cs-card spot" role="group" aria-roledescription="slide" aria-label="Result 2 of 3">
+            <span class="cs-industry">Home Inspection Company · Starting From Scratch</span>
+            <h3>From 7K to 212K views in 2 months</h3>
+            <p class="cs-desc">A home inspection company with almost no social presence. Instagram and Facebook pulled 7K views combined from January to July. In August and September, the first 2 months with us, they pulled 212K, at a low posting volume.</p>
             <div class="cs-result">
-              <div><div class="cs-field-label">Result</div><div class="cs-metric">62 organic sales generated in 30 days</div></div>
-              <a href="#audit-form" class="btn btn-outline btn-sm">Learn More</a>
+              <div><div class="cs-field-label">Result</div><div class="cs-metric">183K Facebook + 29K Instagram views</div></div>
+              <a href="case-studies/home-inspection-new.html" class="btn btn-outline btn-sm">Learn More</a>
             </div>
           </div>
 
-          <div class="cs-card" role="group" aria-roledescription="slide" aria-label="Case study 3 of 3">
-            <span class="cs-industry">Content &amp; Social Growth</span>
-            <h3>From 196 views to 270K in 28 days</h3>
-            <p class="cs-desc">Reactivated a TikTok faceless account using short-form content and structured posting.</p>
+          <div class="cs-card spot" role="group" aria-roledescription="slide" aria-label="Result 3 of 3">
+            <span class="cs-industry">Faceless Brand · TikTok</span>
+            <h3>From 196 views to 270K in 28 days. Then one video passed 800K.</h3>
+            <p class="cs-desc">A dormant account, relaunched with a short-form strategy and a structured posting plan. One video, built on research into what was already winning in the niche, kept pulling views long after it went up.</p>
             <div class="cs-result">
-              <div><div class="cs-field-label">Result</div><div class="cs-metric">270K+ organic views generated</div></div>
-              <a href="#audit-form" class="btn btn-outline btn-sm">Learn More</a>
+              <div><div class="cs-field-label">Result</div><div class="cs-metric">270K views in 28 days, 800K+ on a single video</div></div>
+              <a href="case-studies/faceless-brand-tiktok.html" class="btn btn-outline btn-sm">Learn More</a>
             </div>
           </div>
 
         </div>
       </div>
-      <button class="cs-arrow cs-next" aria-label="Next case study">
+      <button class="cs-arrow cs-next" aria-label="Next result">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M9 6L15 12L9 18" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </button>
       <div class="cs-dots" id="csDots"></div>
     </div>
+  </div>
+</section>
+
+<!-- ============ WHO IT'S FOR ============ -->
+<section class="why" id="fit">
+  <div class="wrap">
+    <div class="section-head center reveal">
+      <span class="eyebrow">Who It's For</span>
+      <h2>Built for experts who are willing to be the face.</h2>
+      <p>Home inspectors, coaches, consultants, clinics, contractors, and anyone whose expertise sells their service.</p>
+    </div>
+    <div class="fit-grid">
+      <div class="fit-card spot yes reveal reveal-left">
+        <h3>This works if you...</h3>
+        <ul>
+          <li>Can be on camera, or have someone on your team who can</li>
+          <li>Sell a service where one new client is worth real money</li>
+          <li>Can film 1 to 2 hours a week, with clear direction from us</li>
+          <li>Already believe in video, but your posts aren't getting watched</li>
+        </ul>
+      </div>
+      <div class="fit-card spot no reveal reveal-right reveal-delay-1">
+        <h3>This isn't for you if you...</h3>
+        <ul>
+          <li>Want faceless or stock-footage content</li>
+          <li>Won't film. We don't post for the sake of posting.</li>
+          <li>Want a guaranteed view count or sales number</li>
+          <li>Need paid ads, not organic video</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PRICING ============ -->
+<section id="pricing">
+  <div class="wrap">
+    <div class="section-head center reveal">
+      <span class="eyebrow">Pricing</span>
+      <h2>Clear plans. No guessing.</h2>
+      <p>Not sure where to start? Request the free audit and I'll tell you which plan fits, including if it's none of them.</p>
+    </div>
+    <div class="price-grid">
+      <div class="price-card spot reveal">
+        <span class="service-tag">For brands starting from zero</span>
+        <h3>Growth Foundation</h3>
+        <div class="price">$2,000<span>one-time · 30 days</span></div>
+        <p>We build your whole short-form system, then prove it with your first videos.</p>
+        <ul>
+          <li>Niche and competitor research</li>
+          <li>Content strategy and a 30-hook bank</li>
+          <li>Your brand's editing style</li>
+          <li>8 videos edited and posted</li>
+          <li>Profile copy and a step-by-step setup guide</li>
+          <li>Filming guide and shot list</li>
+          <li>Weekly coaching call on filming and speaking</li>
+        </ul>
+      </div>
+      <div class="price-card spot featured reveal reveal-delay-1">
+        <span class="service-tag">For brands already posting</span>
+        <h3>Growth Management</h3>
+        <div class="price">$1,500<span>/ month · 3-month minimum</span></div>
+        <p>Consistent, researched video every week, managed month to month.</p>
+        <ul>
+          <li>12 videos a month (3 a week)</li>
+          <li>Topic direction and a hook on every video</li>
+          <li>Editing and posting to TikTok, Reels, Shorts, and Facebook</li>
+          <li>Comment replies on new videos</li>
+          <li>ManyChat keyword automations</li>
+          <li>Monthly data review and report</li>
+          <li>Bi-weekly coaching call on filming and speaking</li>
+        </ul>
+      </div>
+      <div class="price-card spot reveal reveal-delay-2">
+        <span class="service-tag">For high-volume brands</span>
+        <h3>Growth Scale</h3>
+        <div class="price">$2,400<span>/ month · 3-month minimum</span></div>
+        <p>Daily weekday presence for brands built on reach.</p>
+        <ul>
+          <li>20 videos a month (5 a week)</li>
+          <li>Everything in Growth Management</li>
+          <li>More ManyChat keyword automations</li>
+          <li>Comment replies on the past 7 days of videos</li>
+          <li>Data review every 2 weeks</li>
+          <li>Profile refresh every quarter</li>
+          <li>Weekly coaching call on filming and speaking</li>
+        </ul>
+        <p class="price-note">Limited availability.</p>
+      </div>
+    </div>
+    <p class="pricing-foot reveal">Every plan: you film, we do everything else.</p>
   </div>
 </section>
 
@@ -564,90 +838,51 @@
   <div class="wrap">
     <div class="section-head center reveal">
       <span class="eyebrow">Why Doxarise?</span>
-      <h2>We build the presence, you get the customers.</h2>
+      <h2>You film. We handle the rest.</h2>
     </div>
 
-    <div class="compare-table reveal">
+    <div class="compare-table reveal reveal-scale">
       <div class="compare-head-cell"></div>
       <div class="compare-head-cell brand-cell"><img src="assets/logo.png" alt=""><span>Doxarise</span></div>
-      <div class="compare-head-cell">Cheap Social Media Manager</div>
+      <div class="compare-head-cell">Freelance Editor</div>
       <div class="compare-head-cell">Doing It Yourself</div>
 
       <div class="compare-row">
-        <div class="compare-feature">Strategy</div>
-        <div class="compare-cell win"><span class="cell-label">Doxarise</span><span class="cell-icon yes">✓</span><p>Built from your actual data and customers</p></div>
-        <div class="compare-cell"><span class="cell-label">Cheap Social Media Manager</span><span class="cell-icon no">✕</span><p>Execution only, no strategy behind it</p></div>
-        <div class="compare-cell"><span class="cell-label">Doing It Yourself</span><span class="cell-icon no">✕</span><p>No strategy, just posting when there's time</p></div>
+        <div class="compare-feature">What to post</div>
+        <div class="compare-cell win"><span class="cell-label">Doxarise</span><span class="cell-icon yes">✓</span><p>Researched from what's winning in your niche</p></div>
+        <div class="compare-cell"><span class="cell-label">Freelance Editor</span><span class="cell-icon no">✕</span><p>You have to tell them</p></div>
+        <div class="compare-cell"><span class="cell-label">Doing It Yourself</span><span class="cell-icon no">✕</span><p>Guessing, or copying trends</p></div>
       </div>
       <div class="compare-row">
-        <div class="compare-feature">Who does the work</div>
-        <div class="compare-cell win"><span class="cell-label">Doxarise</span><span class="cell-icon yes">✓</span><p>Same person who built the plan</p></div>
-        <div class="compare-cell"><span class="cell-label">Cheap Social Media Manager</span><span class="cell-icon no">✕</span><p>You end up managing them anyway</p></div>
-        <div class="compare-cell"><span class="cell-label">Doing It Yourself</span><span class="cell-icon no">✕</span><p>You, on top of running the business</p></div>
+        <div class="compare-feature">Hooks</div>
+        <div class="compare-cell win"><span class="cell-label">Doxarise</span><span class="cell-icon yes">✓</span><p>A scroll-stopping hook on every video</p></div>
+        <div class="compare-cell"><span class="cell-label">Freelance Editor</span><span class="cell-icon no">✕</span><p>Not their job</p></div>
+        <div class="compare-cell"><span class="cell-label">Doing It Yourself</span><span class="cell-icon no">✕</span><p>Made up on the spot</p></div>
       </div>
       <div class="compare-row">
-        <div class="compare-feature">Consistency</div>
-        <div class="compare-cell win"><span class="cell-label">Doxarise</span><span class="cell-icon yes">✓</span><p>Structured system, runs every week</p></div>
-        <div class="compare-cell"><span class="cell-label">Cheap Social Media Manager</span><span class="cell-icon no">✕</span><p>Depends on their workload, not yours</p></div>
-        <div class="compare-cell"><span class="cell-label">Doing It Yourself</span><span class="cell-icon no">✕</span><p>Inconsistent, first thing to drop</p></div>
+        <div class="compare-feature">Editing</div>
+        <div class="compare-cell win"><span class="cell-label">Doxarise</span><span class="cell-icon yes">✓</span><p>Matched to your brand and audience</p></div>
+        <div class="compare-cell"><span class="cell-label">Freelance Editor</span><span class="cell-icon yes">✓</span><p>Yes, but usually a template</p></div>
+        <div class="compare-cell"><span class="cell-label">Doing It Yourself</span><span class="cell-icon no">✕</span><p>Hours in an app, every week</p></div>
       </div>
       <div class="compare-row">
-        <div class="compare-feature">Results tracking</div>
-        <div class="compare-cell win"><span class="cell-label">Doxarise</span><span class="cell-icon yes">✓</span><p>Real numbers, reported monthly</p></div>
-        <div class="compare-cell"><span class="cell-label">Cheap Social Media Manager</span><span class="cell-icon no">✕</span><p>Rarely measured or adjusted</p></div>
-        <div class="compare-cell"><span class="cell-label">Doing It Yourself</span><span class="cell-icon no">✕</span><p>No one's watching what's working</p></div>
+        <div class="compare-feature">Learning from data</div>
+        <div class="compare-cell win"><span class="cell-label">Doxarise</span><span class="cell-icon yes">✓</span><p>Reviewed and adjusted every month</p></div>
+        <div class="compare-cell"><span class="cell-label">Freelance Editor</span><span class="cell-icon no">✕</span><p>Rarely tracked</p></div>
+        <div class="compare-cell"><span class="cell-label">Doing It Yourself</span><span class="cell-icon no">✕</span><p>No time to look</p></div>
       </div>
       <div class="compare-row">
-        <div class="compare-feature">Cost over time</div>
-        <div class="compare-cell win"><span class="cell-label">Doxarise</span><span class="cell-icon yes">✓</span><p>Priced for what it delivers</p></div>
-        <div class="compare-cell"><span class="cell-label">Cheap Social Media Manager</span><span class="cell-icon no">✕</span><p>Cheap upfront, wastes time long-term</p></div>
-        <div class="compare-cell"><span class="cell-label">Doing It Yourself</span><span class="cell-icon no">✕</span><p>Free, but costs you hours every week</p></div>
+        <div class="compare-feature">Help on camera</div>
+        <div class="compare-cell win"><span class="cell-label">Doxarise</span><span class="cell-icon yes">✓</span><p>Filming guides, plus weekly or bi-weekly calls to coach how you film and speak</p></div>
+        <div class="compare-cell"><span class="cell-label">Freelance Editor</span><span class="cell-icon no">✕</span><p>Edits whatever you send</p></div>
+        <div class="compare-cell"><span class="cell-label">Doing It Yourself</span><span class="cell-icon no">✕</span><p>Learning it alone, by trial and error</p></div>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ HOW WE WORK ============ -->
-<section class="process" id="process">
-  <div class="wrap">
-    <div class="section-head center reveal">
-      <span class="eyebrow">How We Work</span>
-      <h2>A real process, not a vague promise.</h2>
-    </div>
-
-    <div class="process-list">
-      <div class="process-step reveal">
-        <div class="step-num">01</div>
-        <div class="step-body">
-          <h4>Analysis</h4>
-          <p>Full audit, competitor research, and your ideal customer profile.</p>
-        </div>
+      <div class="compare-row">
+        <div class="compare-feature">Your time</div>
+        <div class="compare-cell win"><span class="cell-label">Doxarise</span><span class="cell-icon yes">✓</span><p>1 to 2 hours of filming a week</p></div>
+        <div class="compare-cell"><span class="cell-label">Freelance Editor</span><span class="cell-icon no">✕</span><p>Filming plus planning plus managing them</p></div>
+        <div class="compare-cell"><span class="cell-label">Doing It Yourself</span><span class="cell-icon no">✕</span><p>All of it, on top of running the business</p></div>
       </div>
-      <div class="process-step reveal reveal-delay-1">
-        <div class="step-num">02</div>
-        <div class="step-body">
-          <h4>Strategy</h4>
-          <p>Documented content plan and GBP optimization, built from real data.</p>
-        </div>
-      </div>
-      <div class="process-step reveal reveal-delay-2">
-        <div class="step-num">03</div>
-        <div class="step-body">
-          <h4>Production</h4>
-          <p>Real content, built and scheduled. Proof the system works.</p>
-        </div>
-      </div>
-      <div class="process-step reveal reveal-delay-3">
-        <div class="step-num">04</div>
-        <div class="step-body">
-          <h4>Launch</h4>
-          <p>It goes live. A working system, not just a plan.</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="process-cta reveal">
-      <a href="#audit" class="btn btn-gold">Get My Free Audit</a>
     </div>
   </div>
 </section>
@@ -655,20 +890,20 @@
 <!-- ============ FOUNDER ============ -->
 <section class="founder" id="founder">
   <div class="wrap founder-grid">
-    <div class="reveal">
+    <div class="reveal reveal-left">
       <span class="eyebrow">The Founder</span>
-      <h2>The person who builds your strategy is the person who runs it</h2>
+      <h2>The person planning your content is the person you talk to.</h2>
       <p class="founder-name">I'm Niño Peralta, founder of Doxarise.</p>
-      <p>I started by growing a dormant TikTok account from 196 views to 270,000 in under 30 days, no ad spend, no team, just a real content strategy built from scratch. That same approach generated 62 organic sales for another project, also with zero ad spend.</p>
-      <p>Those results are what convinced me this wasn't luck, it was a system. I built Doxarise to bring that same system to local businesses that deserve the same growth, without gambling on ads or hoping a post goes viral.</p>
-      <p>I stay hands-on and oversee the direction and strategy on every account personally. Nothing goes out without me shaping it first.</p>
+      <p>I started by relaunching a dormant faceless TikTok brand: 196 views to 270,000 in 28 days. One video from it kept growing long after it went up, and it's now past 800,000 views.</p>
+      <p>Then I brought the same method to a local home inspection company. They went from 51K views in the 5 months before we started to 11.4 million in the 4 months after.</p>
+      <p>Both worked for the same reason: research what's already winning, write a hook worth stopping for, edit to the brand, and follow the data. I lead the research and strategy on every account, and I review every video before it goes live.</p>
     </div>
-    <div class="reveal reveal-delay-1">
+    <div class="reveal reveal-right reveal-delay-1">
       <div class="founder-photo">
         <img src="assets/nino-peralta.jpg" alt="Niño Peralta, founder of Doxarise">
       </div>
-      <!-- EDITABLE: update or remove this line as availability changes -->
-      <div class="spots-badge"><span class="spots-dot"></span> Two spots left this month</div>
+      <!-- EDITABLE: true capacity statement, no countdowns -->
+      <div class="spots-badge"><span class="spots-dot"></span> I take on a small number of clients at a time</div>
     </div>
   </div>
 </section>
@@ -678,30 +913,50 @@
   <div class="wrap">
     <div class="section-head center reveal">
       <span class="eyebrow">FAQ</span>
-      <h2>Common questions.</h2>
+      <h2>Still on the fence?</h2>
+      <p>The questions most people ask before they start, answered straight.</p>
     </div>
 
-    <!-- EDITABLE: swap any question/answer below as final FAQ copy is confirmed -->
-    <div class="faq-list reveal">
-      <div class="faq-item">
-        <button class="faq-q" aria-expanded="false"><h3>Do I need an existing social media presence?</h3><span class="chevron"></span></button>
-        <div class="faq-a"><div class="faq-a-inner"><p>No. If you're starting from nothing, that's exactly what Growth Foundation is built for.</p></div></div>
+    <div class="faq-list">
+      <div class="faq-item spot reveal" style="--rd:0ms">
+        <button class="faq-q" aria-expanded="false"><h3>I've posted before and nobody watched. Why would this be different?</h3><span class="chevron"></span></button>
+        <div class="faq-a"><div class="faq-a-inner"><p>Most accounts post without research and without a real hook. We start from what's already winning in your niche, build every video to win the first 3 seconds, and adjust every month based on your data. You're not guessing anymore.</p></div></div>
       </div>
-      <div class="faq-item">
-        <button class="faq-q" aria-expanded="false"><h3>How is this different from other agencies I've tried?</h3><span class="chevron"></span></button>
-        <div class="faq-a"><div class="faq-a-inner"><p>No templated content replicated across clients. Every strategy is built from your business's own data, and the person who builds it is the person who executes it.</p></div></div>
+      <div class="faq-item spot reveal" style="--rd:60ms">
+        <button class="faq-q" aria-expanded="false"><h3>I'm awkward on camera. Can I still do this?</h3><span class="chevron"></span></button>
+        <div class="faq-a"><div class="faq-a-inner"><p>Most people feel that way at first. You get filming guides and regular coaching calls on how to film and speak. Some people deliver best out loud, some brands win with visuals, and we build around what works for you. You do need to show up, though. If nobody on your team will film, this isn't the right fit.</p></div></div>
       </div>
-      <div class="faq-item">
-        <button class="faq-q" aria-expanded="false"><h3>How long until I see results?</h3><span class="chevron"></span></button>
-        <div class="faq-a"><div class="faq-a-inner"><p>Organic growth compounds, it doesn't spike overnight. Most engagements are built around a 90-day view, with real movement visible well before that.</p></div></div>
+      <div class="faq-item spot reveal" style="--rd:120ms">
+        <button class="faq-q" aria-expanded="false"><h3>I don't have time for this.</h3><span class="chevron"></span></button>
+        <div class="faq-a"><div class="faq-a-inner"><p>It's 1 to 2 hours of filming a week, usually in one session. We tell you exactly what to film and which topics to cover. Everything else is on us.</p></div></div>
       </div>
-      <div class="faq-item">
-        <button class="faq-q" aria-expanded="false"><h3>What happens after I submit the audit request?</h3><span class="chevron"></span></button>
-        <div class="faq-a"><div class="faq-a-inner"><p>We review your business and current presence first, then reach out to schedule a call. No pushy sales call out of nowhere.</p></div></div>
+      <div class="faq-item spot reveal" style="--rd:180ms">
+        <button class="faq-q" aria-expanded="false"><h3>I already have someone posting for me. Why switch?</h3><span class="chevron"></span></button>
+        <div class="faq-a"><div class="faq-a-inner"><p>Posting isn't the problem. What gets posted is. If your videos aren't getting watched, more of the same won't fix it. We research, direct, edit, and adjust from your data, so every video has a reason to exist.</p></div></div>
       </div>
-      <div class="faq-item">
-        <button class="faq-q" aria-expanded="false"><h3>What does it cost?</h3><span class="chevron"></span></button>
-        <div class="faq-a"><div class="faq-a-inner"><p>Depends on where your business is starting from. We'll walk through it together once we understand your situation, no generic price list.</p></div></div>
+      <div class="faq-item spot reveal" style="--rd:240ms">
+        <button class="faq-q" aria-expanded="false"><h3>Can you guarantee views, followers, or new customers?</h3><span class="chevron"></span></button>
+        <div class="faq-a"><div class="faq-a-inner"><p>No, and nobody honest can. What we guarantee is the work: the agreed number of videos, done properly and on time every month. What that builds is attention, more of the right people seeing you and remembering you when they need what you do.</p></div></div>
+      </div>
+      <div class="faq-item spot reveal" style="--rd:300ms">
+        <button class="faq-q" aria-expanded="false"><h3>$1,500 a month is a lot. Is it worth it?</h3><span class="chevron"></span></button>
+        <div class="faq-a"><div class="faq-a-inner"><p>You're not paying for an editor. You're getting research, content direction, editing, hooks, posting, comment replies, coaching, and monthly data reviews with one person leading it. If you're not ready for monthly, Growth Foundation is a one-time $2,000 with no ongoing commitment.</p></div></div>
+      </div>
+      <div class="faq-item spot reveal" style="--rd:360ms">
+        <button class="faq-q" aria-expanded="false"><h3>What if I don't like a video?</h3><span class="chevron"></span></button>
+        <div class="faq-a"><div class="faq-a-inner"><p>You approve every video before it goes live, and one round of changes is included. Nothing gets posted that you haven't seen.</p></div></div>
+      </div>
+      <div class="faq-item spot reveal" style="--rd:420ms">
+        <button class="faq-q" aria-expanded="false"><h3>Will I lose control of my accounts?</h3><span class="chevron"></span></button>
+        <div class="faq-a"><div class="faq-a-inner"><p>No. You connect your accounts to our scheduling tool yourself, through the platform's own login. We never ask for your passwords.</p></div></div>
+      </div>
+      <div class="faq-item spot reveal" style="--rd:480ms">
+        <button class="faq-q" aria-expanded="false"><h3>Why is there a 3-month minimum?</h3><span class="chevron"></span></button>
+        <div class="faq-a"><div class="faq-a-inner"><p>Short-form compounds. The first month teaches us what your audience responds to, and the next two are where that pays off. One month isn't enough to judge it fairly.</p></div></div>
+      </div>
+      <div class="faq-item spot reveal" style="--rd:540ms">
+        <button class="faq-q" aria-expanded="false"><h3>What happens after I request the audit?</h3><span class="chevron"></span></button>
+        <div class="faq-a"><div class="faq-a-inner"><p>I watch your recent videos and look at your profile. Then I email you what I found and a link to book a call if you want to talk. No pushy sales call out of nowhere.</p></div></div>
       </div>
     </div>
   </div>
@@ -710,36 +965,45 @@
 <!-- ============ AUDIT FORM ============ -->
 <section id="audit" class="cta-section">
   <div class="wrap cta-inner">
-    <div class="reveal">
+    <div class="reveal reveal-left">
       <span class="eyebrow">Get Started</span>
-      <h2>Get your free Digital Presence Audit.</h2>
-      <p>Tell us about your business. We'll take a real look at where you stand, then reach out to schedule a call.</p>
+      <h2>Get your free Content Audit.</h2>
+      <p>Send me your profile. I'll watch your last 10 videos and tell you what's holding them back.</p>
       <ul class="cta-list">
+        <li>A real review of your hooks, editing, and consistency</li>
         <li>No cost, no obligation</li>
-        <li>A real review, not a generic checklist</li>
-        <li>We reach out to you, no cold call out of nowhere</li>
+        <li>You'll know which plan fits, or if none do</li>
       </ul>
     </div>
-    <form id="audit-form" action="https://formspree.io/f/mpqvbbdv" method="POST" class="reveal reveal-delay-1" style="scroll-margin-top:calc(var(--nav-h) + 16px);">
-      <input type="hidden" name="_subject" value="New Doxarise Audit Request">
+    <form id="audit-form" action="https://formspree.io/f/mpqvbbdv" method="POST" class="reveal reveal-right reveal-delay-1" style="scroll-margin-top:calc(var(--nav-h) + 16px);">
+      <input type="hidden" name="_subject" value="New Doxarise Content Audit Request">
       <div class="field">
         <label for="f-name">Full Name</label>
         <input id="f-name" type="text" name="name" placeholder="Your name" required>
       </div>
       <div class="field">
-        <label for="f-business">Business Name</label>
-        <input id="f-business" type="text" name="business" placeholder="Your business name" required>
+        <label for="f-business">Business or Brand Name</label>
+        <input id="f-business" type="text" name="business" placeholder="Your business or brand" required>
       </div>
       <div class="field">
         <label for="f-email">Email</label>
         <input id="f-email" type="email" name="email" placeholder="you@business.com" required>
       </div>
       <div class="field">
-        <label for="f-website">Website or Social Link</label>
-        <input id="f-website" type="text" name="website" placeholder="Instagram, Facebook, or website">
+        <label for="f-profile">Your main video profile</label>
+        <input id="f-profile" type="text" name="profile" placeholder="Instagram or TikTok link" required>
       </div>
       <div class="field">
-        <label for="f-decision">Are you the one who handles marketing decisions?</label>
+        <label for="f-film">Can you film 1 to 2 hours a week?</label>
+        <select id="f-film" name="can_film">
+          <option>Yes, I can be on camera</option>
+          <option>Yes, someone on my team can</option>
+          <option>Not sure yet</option>
+          <option>No</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="f-decision">Are you the one who makes marketing decisions?</label>
         <select id="f-decision" name="decision_maker">
           <option>Yes, that's me</option>
           <option>I share that decision with someone else</option>
@@ -747,15 +1011,16 @@
         </select>
       </div>
       <div class="field">
-        <label for="f-challenge">Biggest challenge with your online presence right now</label>
-        <textarea id="f-challenge" name="challenge" placeholder="Tell us briefly..."></textarea>
+        <label for="f-challenge">What's frustrating you about your videos right now?</label>
+        <textarea id="f-challenge" name="challenge" placeholder="Low views, no time, don't know what to post..."></textarea>
       </div>
-      <button class="submit-btn" type="submit">Request My Free Audit</button>
-      <p class="form-foot">We'll review your info and follow up within 2 business days.</p>
+      <button class="submit-btn" type="submit">Request My Free Content Audit</button>
+      <p class="form-foot">I'll review your profile and reply within 2 business days.</p>
     </form>
   </div>
 </section>
 
+</div>
 </main>
 
 <footer>
@@ -765,8 +1030,9 @@
       <span style="font-size:14px;font-family:'Manrope',sans-serif;font-weight:800;letter-spacing:0.06em;">DOXARISE</span>
     </div>
     <div class="footer-links">
-      <a href="#case-studies">Case Studies</a>
-      <a href="#process">Process</a>
+      <a href="#method">Method</a>
+      <a href="#proof">Results</a>
+      <a href="#pricing">Pricing</a>
       <a href="#faq">FAQ</a>
     </div>
     <div class="footer-copy">© 2026 Doxarise. Strategy. Growth. Impact.</div>
@@ -824,58 +1090,190 @@
     });
   });
 
-  /* ---- case study carousel ---- */
+  /* ---- case study carousel: 3D stack with drag ---- */
   var carousel = document.getElementById('csCarousel');
   if(carousel){
     var track = document.getElementById('csTrack');
     var slides = Array.prototype.slice.call(track.children);
     var dotsWrap = document.getElementById('csDots');
-    var prevBtn = carousel.querySelector('.cs-prev');
-    var nextBtn = carousel.querySelector('.cs-next');
-    var index = 0;
-
+    var prevBtn = carousel.querySelector('.cs-prev'), nextBtn = carousel.querySelector('.cs-next');
+    var index = 0, drag = 0, n = slides.length;
     slides.forEach(function(_, i){
       var dot = document.createElement('button');
       dot.className = 'cs-dot' + (i === 0 ? ' active' : '');
-      dot.setAttribute('aria-label', 'Go to case study ' + (i + 1));
+      dot.setAttribute('aria-label', 'Go to result ' + (i + 1));
       dot.addEventListener('click', function(){ goTo(i); });
       dotsWrap.appendChild(dot);
     });
     var dots = Array.prototype.slice.call(dotsWrap.children);
-
-    function goTo(i){
-      index = (i + slides.length) % slides.length;
-      track.style.transform = 'translateX(-' + (index * 100) + '%)';
+    function size(){ var h = 0; slides.forEach(function(sl){ h = Math.max(h, sl.offsetHeight); }); track.style.height = h + 'px'; }
+    function render(){
+      var w = carousel.offsetWidth, mobile = w < 600;
+      slides.forEach(function(sl, i){
+        var o = i - index; if(o > n / 2) o -= n; if(o < -n / 2) o += n;
+        var x = o + drag, ax = Math.abs(x);
+        var tx = x * (mobile ? 86 : 64), sc = 1 - Math.min(ax, 1.5) * 0.14, ry = -x * 16, op = ax > 1.6 ? 0 : 1 - Math.min(ax, 1) * 0.55;
+        sl.style.transform = 'translateX(' + tx + '%) scale(' + sc + ') rotateY(' + ry + 'deg)';
+        sl.style.opacity = op;
+        sl.style.zIndex = String(100 - Math.round(ax * 10));
+        sl.style.filter = ax > 0.3 ? 'blur(' + Math.min(ax, 1) * 2 + 'px) brightness(' + (1 - Math.min(ax, 1) * 0.35) + ')' : 'none';
+        sl.style.pointerEvents = ax < 0.5 ? 'auto' : 'none';
+        sl.setAttribute('aria-hidden', ax < 0.5 ? 'false' : 'true');
+      });
       dots.forEach(function(d, di){ d.classList.toggle('active', di === index); });
     }
+    function goTo(i){ index = (i + n) % n; drag = 0; track.classList.remove('dragging'); render(); }
     prevBtn.addEventListener('click', function(){ goTo(index - 1); });
     nextBtn.addEventListener('click', function(){ goTo(index + 1); });
-
-    /* arrow-key navigation: works when the carousel is focused (tab/click into it)
-       or simply hovered, so it responds the way people instinctively expect */
     var hovered = false;
     carousel.addEventListener('mouseenter', function(){ hovered = true; });
     carousel.addEventListener('mouseleave', function(){ hovered = false; });
     document.addEventListener('keydown', function(e){
       if(e.key !== 'ArrowLeft' && e.key !== 'ArrowRight') return;
-      var focused = carousel.contains(document.activeElement);
-      if(!hovered && !focused) return;
-      e.preventDefault();
-      goTo(e.key === 'ArrowLeft' ? index - 1 : index + 1);
+      if(!hovered && !carousel.contains(document.activeElement)) return;
+      e.preventDefault(); goTo(e.key === 'ArrowLeft' ? index - 1 : index + 1);
     });
-
-    /* touch swipe */
-    var startX = null;
-    carousel.addEventListener('touchstart', function(e){ startX = e.touches[0].clientX; }, {passive:true});
-    carousel.addEventListener('touchend', function(e){
+    /* drag / swipe with mouse or finger */
+    var startX = null, moved = false;
+    track.addEventListener('pointerdown', function(e){
+      if(e.target.closest('a,button')) return;
+      startX = e.clientX; moved = false; track.classList.add('dragging'); track.setPointerCapture(e.pointerId);
+    });
+    track.addEventListener('pointermove', function(e){
       if(startX === null) return;
-      var dx = e.changedTouches[0].clientX - startX;
-      if(Math.abs(dx) > 40){ goTo(dx < 0 ? index + 1 : index - 1); }
+      var dx = e.clientX - startX; if(Math.abs(dx) > 4) moved = true;
+      drag = Math.max(Math.min(dx / (carousel.offsetWidth * 0.7), 1), -1); render();
+    });
+    function end(){
+      if(startX === null) return;
       startX = null;
+      if(drag < -0.18) goTo(index + 1); else if(drag > 0.18) goTo(index - 1); else goTo(index);
+    }
+    track.addEventListener('pointerup', end); track.addEventListener('pointercancel', end);
+    size(); render();
+    window.addEventListener('resize', function(){ size(); render(); });
+    if(document.fonts && document.fonts.ready){ document.fonts.ready.then(function(){ size(); render(); }); }
+  }
+
+  /* ---- premium interactions (desktop pointers only) ---- */
+  var finePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+  if(finePointer && !reduceMotion){
+    document.body.classList.add('fx-on');
+    var glow = document.querySelector('.cursor-glow');
+    var gx = -999, gy = -999, tx = -999, ty = -999;
+    window.addEventListener('mousemove', function(e){ tx = e.clientX; ty = e.clientY; }, {passive:true});
+    (function loop(){
+      gx += (tx - gx) * 0.12; gy += (ty - gy) * 0.12;
+      if(glow){ glow.style.transform = 'translate3d(' + gx + 'px,' + gy + 'px,0)'; }
+      requestAnimationFrame(loop);
+    })();
+
+    /* spotlight cards */
+    document.querySelectorAll('.spot').forEach(function(card){
+      card.addEventListener('mousemove', function(e){
+        var r = card.getBoundingClientRect();
+        card.style.setProperty('--mx', (e.clientX - r.left) + 'px');
+        card.style.setProperty('--my', (e.clientY - r.top) + 'px');
+      });
+      card.addEventListener('mouseleave', function(){
+        card.style.setProperty('--mx', '-999px'); card.style.setProperty('--my', '-999px');
+      });
     });
 
-    if(reduceMotion){ track.style.transition = 'none'; }
+    /* magnetic buttons */
+    document.querySelectorAll('.btn-gold, .btn-outline').forEach(function(btn){
+      btn.addEventListener('mousemove', function(e){
+        var r = btn.getBoundingClientRect();
+        var dx = e.clientX - (r.left + r.width / 2), dy = e.clientY - (r.top + r.height / 2);
+        btn.style.transform = 'translate(' + (dx * 0.18) + 'px,' + (dy * 0.28) + 'px)';
+      });
+      btn.addEventListener('mouseleave', function(){ btn.style.transform = ''; });
+    });
+
   }
+
+  /* ---- count-up stats ---- */
+  if(!reduceMotion){
+    document.querySelectorAll('[data-count]').forEach(function(el){
+      var target = parseFloat(el.getAttribute('data-count')), dec = parseInt(el.getAttribute('data-dec'), 10) || 0, suf = el.getAttribute('data-suffix') || '';
+      var start = null, dur = 1800;
+      el.textContent = (0).toFixed(dec) + suf;
+      function step(t){
+        if(!start) start = t;
+        var p = Math.min((t - start) / dur, 1), eased = 1 - Math.pow(1 - p, 3);
+        el.textContent = (target * eased).toFixed(dec) + suf;
+        if(p < 1) requestAnimationFrame(step);
+      }
+      setTimeout(function(){ requestAnimationFrame(step); }, 450);
+    });
+  }
+
+  /* ---- hero sinks back as the page slides over it ---- */
+  if(!reduceMotion){
+    var heroEl = document.querySelector('.hero'), heroIn = document.querySelector('.hero-inner'), sunEl = document.querySelector('.sun');
+    var ticking = false;
+    function layer(){
+      ticking = false;
+      if(!heroEl) return;
+      var p = Math.min(Math.max(window.scrollY / (heroEl.offsetHeight * 0.9), 0), 1);
+      if(heroIn){ heroIn.style.transform = 'translateY(' + (-40 * p) + 'px) scale(' + (1 - 0.1 * p) + ')'; heroIn.style.opacity = String(1 - 0.85 * p); }
+      if(sunEl){ sunEl.style.transform = 'scale(' + (1 - 0.18 * p) + ')'; sunEl.style.opacity = String(1 - 0.6 * p); }
+    }
+    window.addEventListener('scroll', function(){ if(!ticking){ ticking = true; requestAnimationFrame(layer); } }, {passive:true});
+    layer();
+  }
+
+  /* ---- place the sun under the stats so nothing overlaps ---- */
+  (function(){
+    var heroEl = document.querySelector('.hero'), sunEl = document.querySelector('.sun'), stats = document.querySelector('.hero .stat-row');
+    function place(){
+      if(!heroEl || !sunEl || !stats) return;
+      var hr = heroEl.getBoundingClientRect(), sr = stats.getBoundingClientRect();
+      var icon = window.innerWidth < 900 ? 52 : 64;
+      var ringTop = (sr.bottom - hr.top) + icon / 2 + 34;
+      sunEl.style.setProperty('--ring-top', ringTop + 'px');
+      var tail = window.innerWidth < 900 ? 170 : (window.innerHeight < 780 ? 150 : 230);
+      heroEl.style.minHeight = (ringTop + tail) + 'px';
+    }
+    place(); window.addEventListener('resize', place);
+    if(document.fonts && document.fonts.ready){ document.fonts.ready.then(place); }
+  })();
+
+  /* ---- method journey line ---- */
+  (function(){
+    var grid = document.getElementById('methodGrid'); if(!grid) return;
+    var track = grid.querySelector('.journey'), fill = track.querySelector('.journey-fill');
+    var cards = Array.prototype.slice.call(grid.querySelectorAll('.method-card'));
+    var nodes = cards.map(function(){ var n = document.createElement('span'); n.className = 'journey-node'; grid.appendChild(n); return n; });
+    var pts = [], vertical = false;
+    function layout(){
+      var g = grid.getBoundingClientRect();
+      pts = cards.map(function(c){ var r = c.getBoundingClientRect(); return {x: r.left - g.left + r.width / 2, y: r.top - g.top, l: r.left - g.left, h: r.height}; });
+      vertical = pts.length > 1 && Math.abs(pts[1].y - pts[0].y) > 10;
+      track.className = 'journey ' + (vertical ? 'v' : 'h');
+      if(vertical){
+        var x = 10, y0 = pts[0].y + 40, y1 = pts[pts.length - 1].y + 40;
+        track.style.cssText = 'left:' + x + 'px;top:' + y0 + 'px;height:' + (y1 - y0) + 'px;width:2px;';
+        nodes.forEach(function(n, i){ n.style.left = (x + 1) + 'px'; n.style.top = (pts[i].y + 40) + 'px'; });
+      } else {
+        var y = -20, x0 = pts[0].x, x1 = pts[pts.length - 1].x;
+        track.style.cssText = 'top:' + y + 'px;left:' + x0 + 'px;width:' + (x1 - x0) + 'px;height:2px;';
+        nodes.forEach(function(n, i){ n.style.left = pts[i].x + 'px'; n.style.top = (y + 1) + 'px'; });
+      }
+      update();
+    }
+    function update(){
+      var r = grid.getBoundingClientRect(), vh = window.innerHeight;
+      var start = vh * 0.85, end = vh * (vertical ? 0.05 : 0.35);
+      var p = reduceMotion ? 1 : Math.min(Math.max((start - r.top) / (start - end + (vertical ? r.height * 0.6 : 0)), 0), 1);
+      if(vertical){ fill.style.height = (p * 100) + '%'; } else { fill.style.width = (p * 100) + '%'; }
+      var n = cards.length;
+      cards.forEach(function(c, i){ var on = p >= (n === 1 ? 0 : i / (n - 1)) - 0.001 && p > 0; c.classList.toggle('on', on); nodes[i].classList.toggle('on', on); });
+    }
+    layout();
+    window.addEventListener('resize', layout);
+    window.addEventListener('scroll', function(){ requestAnimationFrame(update); }, {passive:true});
+  })();
 })();
 </script>
 
