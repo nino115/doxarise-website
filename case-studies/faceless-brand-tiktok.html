@@ -165,6 +165,27 @@
     .hero *{animation:none !important;} .cs-bg-chart .cl{stroke-dashoffset:0;} .cs-bg-chart .ca{opacity:1;}
     .cursor-glow{display:none;}
   }
+  /* dashboards */
+  .shots{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  .shot{margin:0;border-radius:18px;padding:12px;
+    background:linear-gradient(155deg, rgba(255,255,255,0.075), rgba(255,255,255,0.02) 45%, rgba(255,255,255,0.035));
+    -webkit-backdrop-filter:blur(22px) saturate(150%);backdrop-filter:blur(22px) saturate(150%);border:1px solid rgba(255,255,255,0.11);
+    box-shadow:inset 0 1px 0 rgba(255,255,255,0.10), 0 24px 50px -30px rgba(0,0,0,0.85);transition:transform .35s var(--ease), border-color .35s var(--ease);}
+  .shot:hover{transform:translateY(-5px);border-color:rgba(228,196,140,0.42);}
+  .shot figcaption{display:flex;align-items:center;gap:10px;font-size:13px;color:var(--mist);margin:2px 4px 10px;}
+  .shot .tag{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:4px 10px;border-radius:999px;background:rgba(255,255,255,0.08);color:var(--bone);}
+  .shot .tag.on{background:rgba(228,196,140,0.18);color:var(--gold-bright);}
+  .shot-img{display:block;width:100%;padding:0;border:0;border-radius:10px;overflow:hidden;cursor:zoom-in;background:#fff;}
+  .shot-img img, .lightbox img{-webkit-user-select:none;user-select:none;-webkit-user-drag:none;-webkit-touch-callout:none;}
+  .shot-img img{display:block;width:100%;height:auto;}
+  .shots-note{margin-top:18px;font-size:12.5px;color:var(--mist);}
+  .lightbox{position:fixed;inset:0;z-index:300;display:flex;align-items:center;justify-content:center;padding:24px;background:rgba(5,5,6,0.88);
+    -webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);opacity:0;pointer-events:none;transition:opacity .3s var(--ease);cursor:zoom-out;}
+  .lightbox.open{opacity:1;pointer-events:auto;}
+  .lightbox img{max-width:min(1240px,100%);max-height:90vh;border-radius:12px;box-shadow:0 30px 80px rgba(0,0,0,0.6);}
+  @media (max-width:760px){ .shots{grid-template-columns:1fr;} }
+  .shots.phones{max-width:640px;}
+  .shots.counts .shot-img{background:#fff;}
 </style>
 
 <script>
@@ -245,21 +266,76 @@
         <div class="row"><span class="before">196</span><span class="arrow">→</span><span class="after">270K+</span></div>
       </div>
       <div class="stat">
-        <div class="label">Followers gained</div>
-        <div class="row"><span class="after">1,733</span></div>
+        <div class="label">Followers</div>
+        <div class="row"><span class="before">238</span><span class="arrow">→</span><span class="after">1,733</span></div>
+        <p class="note">In 20 days, September 4 to 24.</p>
       </div>
       <div class="stat wide">
         <div class="label">Engagements</div>
         <div class="row"><span class="after">32,000+</span></div>
-        <p class="note">Likes, comments, shares, and saves in the same 28 days.</p>
+        <p class="note">28K likes, 4,223 shares, and 92 comments in the same 28 days.</p>
       </div>
     </div>
 
     <div class="group-label">The evergreen video</div>
     <div class="total">
-      <span class="label">Views on a single video, still growing long after it was posted</span>
-      <span class="after">800K+</span>
+      <span class="label">Views on a single video, still growing more than a year after it was posted</span>
+      <span class="after">855K</span>
     </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <span class="eyebrow">04 · The Dashboards</span>
+    <h2>Straight from the analytics.</h2>
+    <p>Screenshots from TikTok, before the relaunch and after. Click any image to see it full size.</p>
+
+    <div class="group-label">TikTok analytics</div>
+    <div class="shots phones">
+        <figure class="shot">
+          <figcaption><span class="tag">Before</span> Aug 7 to 30</figcaption>
+          <button class="shot-img" type="button" data-full="../assets/case-studies/faceless-tiktok-before.webp" aria-label="Enlarge: TikTok analytics, August 7 to 30: 196 post views"><img src="../assets/case-studies/faceless-tiktok-before.webp" alt="TikTok analytics, August 7 to 30: 196 post views" loading="lazy" width="676" height="1364"></button>
+        </figure>
+        <figure class="shot">
+          <figcaption><span class="tag on">After</span> Sep 2 to 29</figcaption>
+          <button class="shot-img" type="button" data-full="../assets/case-studies/faceless-tiktok-after.webp" aria-label="Enlarge: TikTok analytics, September 2 to 29: 270K post views"><img src="../assets/case-studies/faceless-tiktok-after.webp" alt="TikTok analytics, September 2 to 29: 270K post views" loading="lazy" width="676" height="1364"></button>
+        </figure>
+    </div>
+
+    <div class="group-label">Followers</div>
+    <div class="shots counts">
+        <figure class="shot">
+          <figcaption><span class="tag">Before</span> September 4</figcaption>
+          <button class="shot-img" type="button" data-full="../assets/case-studies/faceless-followers-before.webp" aria-label="Enlarge: TikTok profile on September 4: 238 followers"><img src="../assets/case-studies/faceless-followers-before.webp" alt="TikTok profile on September 4: 238 followers" loading="lazy" width="678" height="140"></button>
+        </figure>
+        <figure class="shot">
+          <figcaption><span class="tag on">After</span> September 24</figcaption>
+          <button class="shot-img" type="button" data-full="../assets/case-studies/faceless-followers-after.webp" aria-label="Enlarge: TikTok profile on September 24: 1,733 followers"><img src="../assets/case-studies/faceless-followers-after.webp" alt="TikTok profile on September 24: 1,733 followers" loading="lazy" width="678" height="140"></button>
+        </figure>
+    </div>
+
+    <div class="group-label">The evergreen video</div>
+    <div class="shots">
+        <figure class="shot">
+          <figcaption><span class="tag on">855K views</span> One video</figcaption>
+          <button class="shot-img" type="button" data-full="../assets/case-studies/faceless-evergreen-grid.webp" aria-label="Enlarge: The evergreen video on the account grid: 855K views"><img src="../assets/case-studies/faceless-evergreen-grid.webp" alt="The evergreen video on the account grid: 855K views" loading="lazy" width="1177" height="1091"></button>
+        </figure>
+        <figure class="shot">
+          <figcaption><span class="tag on">Still #1</span> Posted Sep 5, 2025</figcaption>
+          <button class="shot-img" type="button" data-full="../assets/case-studies/faceless-evergreen-toppost.webp" aria-label="Enlarge: Top post in the last 7 days: the evergreen video, 16K views, posted September 5, 2025"><img src="../assets/case-studies/faceless-evergreen-toppost.webp" alt="Top post in the last 7 days: the evergreen video, 16K views, posted September 5, 2025" loading="lazy" width="1131" height="642"></button>
+        </figure>
+        <figure class="shot">
+          <figcaption><span class="tag">Oct 13 to 19, 2026</span> Account, one week</figcaption>
+          <button class="shot-img" type="button" data-full="../assets/case-studies/faceless-evergreen-week.webp" aria-label="Enlarge: Account key metrics, October 13 to 19, 2026: 17K post views"><img src="../assets/case-studies/faceless-evergreen-week.webp" alt="Account key metrics, October 13 to 19, 2026: 17K post views" loading="lazy" width="1131" height="1138"></button>
+        </figure>
+        <figure class="shot">
+          <figcaption><span class="tag">Traffic</span> Where views come from</figcaption>
+          <button class="shot-img" type="button" data-full="../assets/case-studies/faceless-evergreen-search.webp" aria-label="Enlarge: Traffic source: 95% of views come from search"><img src="../assets/case-studies/faceless-evergreen-search.webp" alt="Traffic source: 95% of views come from search" loading="lazy" width="1131" height="933"></button>
+        </figure>
+    </div>
+    <p class="shots-note">More than a year after it was posted, the video still pulled 16K views in a single week, and 95% of the account's views now come from people searching for the topic. That's what picking a topic people actually search for looks like.</p>
+    <p class="shots-note">Screenshots © 2026 Doxarise. All rights reserved. Do not copy, download, or reuse.</p>
   </div>
 </section>
 
@@ -277,11 +353,30 @@
 <footer>
   <div class="wrap">
     <a href="../index.html" class="brand"><img src="../assets/logo.png" alt="Doxarise logo" style="height:24px;width:24px;"><span style="font-size:14px;">DOXARISE</span></a>
-    <div class="footer-copy">© 2026 Doxarise. Strategy. Growth. Impact.</div>
+    <div class="footer-copy">© 2026 Doxarise. All rights reserved.</div>
   </div>
 </footer>
 
 
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Enlarged screenshot"><img alt=""></div>
+<script>
+(function(){
+  var lb = document.getElementById('lightbox'), img = lb.querySelector('img');
+  document.querySelectorAll('.shot-img').forEach(function(b){
+    b.addEventListener('click', function(){ img.src = b.getAttribute('data-full'); img.alt = b.querySelector('img').alt; lb.classList.add('open'); });
+  });
+  function close(){ lb.classList.remove('open'); }
+  lb.addEventListener('click', close);
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape') close(); });
+  document.querySelectorAll('.shot-img img, .lightbox img').forEach(function(im){
+    im.setAttribute('draggable', 'false');
+    im.addEventListener('contextmenu', function(e){ e.preventDefault(); });
+  });
+  document.querySelectorAll('.shots').forEach(function(g){
+    Array.prototype.forEach.call(g.children, function(el, i){ el.classList.add('reveal', i ? 'reveal-right' : 'reveal-left'); });
+  });
+})();
+</script>
 <script>
 (function(){
   var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;

@@ -165,6 +165,26 @@
     .hero *{animation:none !important;} .cs-bg-chart .cl{stroke-dashoffset:0;} .cs-bg-chart .ca{opacity:1;}
     .cursor-glow{display:none;}
   }
+
+  /* dashboards */
+  .shots{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  .shot{margin:0;border-radius:18px;padding:12px;
+    background:linear-gradient(155deg, rgba(255,255,255,0.075), rgba(255,255,255,0.02) 45%, rgba(255,255,255,0.035));
+    -webkit-backdrop-filter:blur(22px) saturate(150%);backdrop-filter:blur(22px) saturate(150%);border:1px solid rgba(255,255,255,0.11);
+    box-shadow:inset 0 1px 0 rgba(255,255,255,0.10), 0 24px 50px -30px rgba(0,0,0,0.85);transition:transform .35s var(--ease), border-color .35s var(--ease);}
+  .shot:hover{transform:translateY(-5px);border-color:rgba(228,196,140,0.42);}
+  .shot figcaption{display:flex;align-items:center;gap:10px;font-size:13px;color:var(--mist);margin:2px 4px 10px;}
+  .shot .tag{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:4px 10px;border-radius:999px;background:rgba(255,255,255,0.08);color:var(--bone);}
+  .shot .tag.on{background:rgba(228,196,140,0.18);color:var(--gold-bright);}
+  .shot-img{display:block;width:100%;padding:0;border:0;border-radius:10px;overflow:hidden;cursor:zoom-in;background:#fff;}
+  .shot-img img, .lightbox img{-webkit-user-select:none;user-select:none;-webkit-user-drag:none;-webkit-touch-callout:none;}
+  .shot-img img{display:block;width:100%;height:auto;}
+  .shots-note{margin-top:18px;font-size:12.5px;color:var(--mist);}
+  .lightbox{position:fixed;inset:0;z-index:300;display:flex;align-items:center;justify-content:center;padding:24px;background:rgba(5,5,6,0.88);
+    -webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);opacity:0;pointer-events:none;transition:opacity .3s var(--ease);cursor:zoom-out;}
+  .lightbox.open{opacity:1;pointer-events:auto;}
+  .lightbox img{max-width:min(1240px,100%);max-height:90vh;border-radius:12px;box-shadow:0 30px 80px rgba(0,0,0,0.6);}
+  @media (max-width:760px){ .shots{grid-template-columns:1fr;} }
 </style>
 
 <script>
@@ -284,6 +304,39 @@
   </div>
 </section>
 
+<section>
+  <div class="wrap">
+    <span class="eyebrow">04 · The Dashboards</span>
+    <h2>Straight from the analytics.</h2>
+    <p>Screenshots from Meta Business Suite, before we started and after. Click any image to see it full size.</p>
+
+    <div class="group-label">Facebook</div>
+    <div class="shots">
+        <figure class="shot">
+          <figcaption><span class="tag">Before</span> January to May 2026</figcaption>
+          <button class="shot-img" type="button" data-full="../assets/case-studies/established-facebook-before.webp" aria-label="Enlarge: Facebook content overview, January to May 2026: 17,514 views"><img src="../assets/case-studies/established-facebook-before.webp" alt="Facebook content overview, January to May 2026: 17,514 views" loading="lazy" width="1230" height="670"></button>
+        </figure>
+        <figure class="shot">
+          <figcaption><span class="tag on">After</span> June to September 2026</figcaption>
+          <button class="shot-img" type="button" data-full="../assets/case-studies/established-facebook-after.webp" aria-label="Enlarge: Facebook content overview, June to September 2026: 8,521,058 views"><img src="../assets/case-studies/established-facebook-after.webp" alt="Facebook content overview, June to September 2026: 8,521,058 views" loading="lazy" width="1230" height="670"></button>
+        </figure>
+    </div>
+
+    <div class="group-label">Instagram</div>
+    <div class="shots">
+        <figure class="shot">
+          <figcaption><span class="tag">Before</span> January to May 2026</figcaption>
+          <button class="shot-img" type="button" data-full="../assets/case-studies/established-instagram-before.webp" aria-label="Enlarge: Instagram content overview, January to May 2026: 33,512 views"><img src="../assets/case-studies/established-instagram-before.webp" alt="Instagram content overview, January to May 2026: 33,512 views" loading="lazy" width="1230" height="670"></button>
+        </figure>
+        <figure class="shot">
+          <figcaption><span class="tag on">After</span> June to September 2026</figcaption>
+          <button class="shot-img" type="button" data-full="../assets/case-studies/established-instagram-after.webp" aria-label="Enlarge: Instagram content overview, June to September 2026: 2,951,355 views"><img src="../assets/case-studies/established-instagram-after.webp" alt="Instagram content overview, June to September 2026: 2,951,355 views" loading="lazy" width="1230" height="670"></button>
+        </figure>
+    </div>
+    <p class="shots-note">Screenshots © 2026 Doxarise. All rights reserved. Do not copy, download, or reuse.</p>
+  </div>
+</section>
+
 <section class="cta">
   <div class="wrap">
     <h2>Want to know what's holding your videos back?</h2>
@@ -298,11 +351,31 @@
 <footer>
   <div class="wrap">
     <a href="../index.html" class="brand"><img src="../assets/logo.png" alt="Doxarise logo" style="height:24px;width:24px;"><span style="font-size:14px;">DOXARISE</span></a>
-    <div class="footer-copy">© 2026 Doxarise. Strategy. Growth. Impact.</div>
+    <div class="footer-copy">© 2026 Doxarise. All rights reserved.</div>
   </div>
 </footer>
 
 
+
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Enlarged screenshot"><img alt=""></div>
+<script>
+(function(){
+  var lb = document.getElementById('lightbox'), img = lb.querySelector('img');
+  document.querySelectorAll('.shot-img').forEach(function(b){
+    b.addEventListener('click', function(){ img.src = b.getAttribute('data-full'); img.alt = b.querySelector('img').alt; lb.classList.add('open'); });
+  });
+  function close(){ lb.classList.remove('open'); }
+  lb.addEventListener('click', close);
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape') close(); });
+  document.querySelectorAll('.shot-img img, .lightbox img').forEach(function(im){
+    im.setAttribute('draggable', 'false');
+    im.addEventListener('contextmenu', function(e){ e.preventDefault(); });
+  });
+  document.querySelectorAll('.shots').forEach(function(g){
+    Array.prototype.forEach.call(g.children, function(el, i){ el.classList.add('reveal', i ? 'reveal-right' : 'reveal-left'); });
+  });
+})();
+</script>
 <script>
 (function(){
   var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
